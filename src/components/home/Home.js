@@ -19,9 +19,11 @@ export default function Home(){
                 <div className="row no-gutters">
                 <div className="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
                     <div className="content">
-                    <h3>Voluptatem dignissimos provident quasi</h3>
+                    <h3>The power of teamwork</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    Behind every great human achievement, there is a team. 
+
+                    From medicine and space travel, to disaster response and pizza deliveries, our products help teams all over the planet advance humanity through the power of software.Our mission is to help unleash the potential of every team.
                     </p>
                     <a href="#" className="about-btn">About us <i className="bx bx-chevron-right"></i></a>
                     </div>
@@ -31,23 +33,23 @@ export default function Home(){
                     <div className="row">
                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                         <i className="bx bx-receipt"></i>
-                        <h4>Corporis voluptates sit</h4>
-                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                        <h4>Taking the 1% Pledge</h4>
+                        <p>We've joined forces with leading companies around the world to donate 1% of equity, profit, employee time, and software licenses to the community.</p>
                         </div>
                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                         <i className="bx bx-cube-alt"></i>
-                        <h4>Ullamco laboris nisi</h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        <h4>A vision for foundation</h4>
+                        <p>We created the Helper Foundation to help make the world a better place by partnering with local organizations and global ones like Room to Read.</p>
                         </div>
                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                         <i className="bx bx-images"></i>
-                        <h4>Labore consequatur</h4>
-                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                        <h4>Join the ultimate team</h4>
+                        <p>Everyone is encouraged to bring their truest, most authentic selves to work. We embrace diversity and are committed to providing a space free of discrimination for everyone.</p>
                         </div>
                         <div className="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                         <i className="bx bx-shield"></i>
-                        <h4>Beatae veritatis</h4>
-                        <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                        <h4>Corporate social responsibility</h4>
+                        <p>Helper is built to be open, inclusive, fair, and just. When we face tough questions about ethics, people, or the planet, we let those principles guide us.</p>
                         </div>
                     </div>
                     </div>
@@ -99,7 +101,7 @@ export default function Home(){
 
                 <div className="section-title">
                 <h2>Features</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Successful project managers have loads of responsibilities – running meetings, planning and scheduling, managing resources and budgets, and analyzing reports to name a few. On a busy day, the workload becomes quite overwhelming. To automate time-consuming tasks and run a large team of professionals, managers need the best project management software solution.</p>
                 </div>
 
                 <div className="row content">
@@ -107,15 +109,14 @@ export default function Home(){
                     <img src="assets/img/features-1.png" className="img-fluid" alt=""/>
                 </div>
                 <div className="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                    <h3>Planning and scheduling</h3>
                     <p className="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                    When managing a team, it is highly important to have everyone’s tasks and responsibilities outlined and visible. Helping to avoid misunderstandings and knowing who to delegate new tasks.
                     </p>
                     <ul>
-                    <li><i className="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    <li><i className="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    <li><i className="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
+                    <li><i className="bi bi-check"></i> Time slot view gives an overview of how many hours and tasks have been booked for each team member, showing the unscheduled time slots</li>
+                    <li><i className="bi bi-check"></i> You’ll get insight to whom assign new tasks in the next step of a project</li>
+                    <li><i className="bi bi-check"></i> Quick overview of everyone’s tasks and unscheduled time helps to set realistic deadlines and to avoid overbooking people</li>
                     </ul>
                 </div>
                 </div>
@@ -125,15 +126,12 @@ export default function Home(){
                     <img src="assets/img/features-2.png" className="img-fluid" alt=""/>
                 </div>
                 <div className="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
-                    <h3>Corporis temporibus maiores provident</h3>
+                    <h3>Collaboration</h3>
                     <p className="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                    A large project team may consist of tens or hundreds of people, each working on specific tasks and having expert knowledge in a different field.
                     </p>
                     <p>
-                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum
+                    Insert your clients’ contact information and link projects and invoices to customer profiles. Later, you can quickly manage and organize your customers by different categories such as companies with due invoices, people waiting for your product, or even trustworthy partners.
                     </p>
                 </div>
                 </div>
@@ -143,12 +141,12 @@ export default function Home(){
                     <img src="assets/img/features-3.png" className="img-fluid" alt=""/>
                 </div>
                 <div className="col-md-7 pt-5" data-aos="fade-left">
-                    <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+                    <h3>Reporting</h3>
+                    <p>To successfully manage your projects, you need to be aware of the shortcomings and problems that require a quick solution. To obtain a thorough overview of your project progress, you need at least two features – insightful reports and a KPI dashboard.</p>
                     <ul>
-                    <li><i className="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    <li><i className="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    <li><i className="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+                    <li><i className="bi bi-check"></i> Customizable reports</li>
+                    <li><i className="bi bi-check"></i> Project KPI dashboard</li>
+                    <li><i className="bi bi-check"></i> Shared team dashboard</li>
                     </ul>
                 </div>
                 </div>
@@ -158,15 +156,12 @@ export default function Home(){
                     <img src="assets/img/features-4.png" className="img-fluid" alt=""/>
                 </div>
                 <div className="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
-                    <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+                    <h3>Resource management</h3>
                     <p className="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                    It’s not only your team’s time needs to be managed. You probably need a tool for keeping track of other project resources: for example, meeting rooms, and materials used in the project process.
                     </p>
                     <p>
-                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum
+                    A great project management tool includes a feature for resource management, outlining all the scheduled and planned resources and calculating the cost of their use. This helps to avoid over-assignments and possible conflicts for lacking resources.
                     </p>
                 </div>
                 </div>

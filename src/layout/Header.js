@@ -2,21 +2,29 @@ import {Link} from 'react-router-dom';
 export default function Header(){
     return(
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5 ">
-                <Link to='/' className="navbar-brand " >Helper</Link>
+            {/* <!-- ======= Header ======= --> */}
+            <header id="header" className="fixed-top">
+                <div className="container d-flex align-items-center justify-content-between">
+
+                <h1 className="logo"><Link>Helper</Link></h1>                
                 
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse " id="navbarNav">
-                    <ul className="navbar-nav">
+
+                <nav id="navbar" className="navbar">
+                    <ul>
+                    <li><Link className="nav-link scrollto " to='/'>Home</Link></li>
+                    <li><Link className="nav-link scrollto" to='/about'>About</Link></li>
+                    <li><Link className="nav-link scrollto" to='/services'>Services</Link></li>
                     
-                        <li className="nav-item">
-                            <Link to='/signin' className="nav-link" >SignIn</Link>
-                        </li>
+                    <li><Link to='/contact' className="nav-link scrollto" >Contact</Link></li>
+                    <li><Link className="getstarted scrollto" to='/signin'>Sign In</Link></li>
                     </ul>
+                    <i className="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+                {/* <!-- .navbar --> */}
+
                 </div>
-            </nav>
+            </header>
+            {/* <!-- End Header --> */}
         </>
     )
 }

@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function SignIn(){
     return(
         <>
-            <section className="vh-100" style={{backgroundColor: "#eee;"}}>
+            <section className="mt-5">
                 <div className="container h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-lg-12 col-xl-11">
@@ -43,6 +45,7 @@ export default function SignIn(){
                                                 </div>
 
                                             </form>
+                                            
                                         </div>
                                         <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
