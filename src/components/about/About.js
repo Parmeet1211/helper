@@ -9,7 +9,7 @@ export default function About(){
                 <div className="content col-xl-5 d-flex align-items-stretch" data-aos="fade-right">
                     <div className="content">
                     <h3>The power of teamwork</h3>
-                    <h4>Hello</h4>
+                    
                     <p>
                     Behind every great human achievement, there is a team. 
 
