@@ -41,7 +41,9 @@ export default function SignIn(){
                                                 </div>
 
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                                    <Link to='/admin'>
                                                     <button type="button" className="btn btn-primary btn-lg">Sign In</button>
+                                                    </Link>
                                                 </div>
 
                                             </form>
