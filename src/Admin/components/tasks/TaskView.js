@@ -66,8 +66,8 @@ export default function TaskView(){
             </div>
             
             <div className="container table-responsive">
-               <table className="table  table-striped table-hover table-primary">
-                    <thead>
+               <table className="table table-hover ">
+                    <thead className='text-primary'>
                         <tr>
                             <td>Sr No</td>
                             <td>Task Id</td>
@@ -77,7 +77,7 @@ export default function TaskView(){
                             <td>Deadline</td>
                             <td>Priority</td>
                             <td>Status</td>
-
+                            <td>View</td>
                         </tr>
                     </thead>
                     
@@ -92,7 +92,7 @@ export default function TaskView(){
                                 <td>{element.deadline}</td>
                                 <td>{element.priority}</td>
                                 <td>{element.status}</td>
-
+                                <td><Link><i className="fa-solid fa-eye"></i></Link></td>
                             </tr>
                             </tbody>
                         ))}

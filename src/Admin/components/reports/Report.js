@@ -4,7 +4,7 @@ import ReportTeam from "./ReportTeam";
 export default function Report(){
     return(
         <>
-            <div className="container-fluid my-5 py-5">
+            <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-12 col-lg-6">
                         <div className="row">
@@ -24,20 +24,20 @@ export default function Report(){
                             <div className="card-header">Progress</div>
                             <div className="card-body">
                                 <h5>Completed</h5>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style={{width: '75%'}} ariaValuenow="25" ariaValuemin="0" ariaValuemax="100">
+                                <div className="progress">
+                                    <div className="progress-bar progress-bar-striped bg-success" role="progressbar" style={{width: '75%'}} ariaValuenow="25" ariaValuemin="0" ariaValuemax="100">
                                     </div>
                                 </div>
                                 <hr/>  
                                 <h5>In Progress</h5>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style={{width: '54%'}} ariaValuenow="25" ariaValuemin="0" ariaValuemax="100">
+                                <div className="progress">
+                                    <div className="progress-bar progress-bar-striped bg-warning" role="progressbar" style={{width: '54%'}} ariaValuenow="25" ariaValuemin="0" ariaValuemax="100">
                                     </div>
                                 </div>
                                 <hr/>
                                 <h5>Pending</h5>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style={{width: '29%'}} ariaValuenow="25" ariaValuemin="0" ariaValuemax="100">
+                                <div className="progress">
+                                    <div className="progress-bar progress-bar-striped bg-danger" role="progressbar" style={{width: '29%'}} ariaValuenow="25" ariaValuemin="0" ariaValuemax="100">
                                     </div>
                                 </div>
                                 

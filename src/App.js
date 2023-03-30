@@ -19,6 +19,10 @@ import Employee from './Admin/components/employee/Employee';
 import AddEmployee from './Admin/components/employee/AddEmployee';
 import ViewEmployee from './Admin/components/employee/ViewEmployee';
 import Report from './Admin/components/reports/Report';
+import AssignTask from './Admin/components/tasks/AssignTask';
+import View from './Admin/components/employee/View';
+import ViewSingle from './Admin/components/project/ViewSingle';
+import Board from './Admin/components/Boards/Board';
 
 function App() {
   return (
@@ -35,16 +39,19 @@ function App() {
           <Route path='/admin' element={<Summary/>}/>
           <Route path='project' element={<Project/>}/>
           <Route path='project/projectview' element={<ProjectView/>}/>
+          <Route path='project/projectview/viewsingle' element={<ViewSingle/>}/>
           <Route path='project/addproject' element={<AddProject/>} /> 
           <Route path='task' element={<Task/>}/>
           <Route path='task/taskview' element={<TaskView/>}/>
           <Route path='task/addtask' element={<AddTask/>}/>
+          <Route path='task/assigntask' element={<AssignTask/>}/>
           <Route path='employee' element={<Employee/>}/>
           <Route path='employee/addemployee' element={<AddEmployee/>}/>
-          <Route path='employee/addemployee' element={<AddEmployee/>}/>
+          {/* <Route path='employee/addemployee' element={<AddEmployee/>}/> */}
           <Route path='employee/viewemployee' element={<ViewEmployee/>}/>
+          <Route path='employee/viewemployee/view' element={<View/>}/>
           <Route path='report' element={<Report/>}/>
-
+          <Route path='board' element={<Board/>}/>
         </Route>
       </Routes>
     </Router>

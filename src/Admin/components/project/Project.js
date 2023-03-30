@@ -10,9 +10,9 @@ export default function Project(){
                 <div className="row">
                     <div className="col-md-6 mb-3 mb-sm-0">
                         <Link to='projectview'>
-                            <div className="card text-bg-info mb-3">
+                            <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                                 <div className="card-body">
-                                    <h5 className="card-title">Current Projects</h5>   
+                                    <h5 className="card-title text-dark">Current Projects</h5>   
                                 </div>
                             </div>
                         </Link>
@@ -20,9 +20,9 @@ export default function Project(){
                     
                     <div className="col-md-6">
                         <Link to='addproject'>
-                        <div className="card text-bg-light mb-3">
+                        <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
-                                <h5 className="card-title">Add new Project</h5>    
+                                <h5 className="card-title text-dark">Add new Project</h5>    
                             </div>
                         </div>
                         </Link>
@@ -39,7 +39,7 @@ export default function Project(){
                                         <h4>{projectnum}</h4> 
                                 </div>
                         </div>
-                        <div className="card mb-3 bg-info">
+                        <div className="card mb-3 bg-light">
                                 <div className="card-body">
                                     <h5 className="card-title">Running</h5> 
                                     <hr/> 
@@ -53,7 +53,7 @@ export default function Project(){
                                     <h4>{done}</h4> 
                                 </div>
                         </div>
-                        <div className="card mb-3 bg-info">
+                        <div className="card mb-3 bg-light">
                                 <div className="card-body">
                                     <h5 className="card-title">Pending</h5> 
                                     <hr/> 

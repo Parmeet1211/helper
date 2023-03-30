@@ -46,14 +46,14 @@ export default function ViewEmployee(){
             </div>
             
             <div className="container table-responsive">
-               <table className="table table-striped table-hover table-primary">
-                    <thead>
+               <table className="table table-hover ">
+                    <thead className='text-primary'>
                         <tr>
                             <td>Sr No</td>
                             <td>Employee Id</td>
                             <td>Employee Name</td>
                             <td>Role</td>
-                            
+                            <td>View</td>
                         </tr>
                     </thead>
                     
@@ -64,7 +64,7 @@ export default function ViewEmployee(){
                                 <td>{element.id}</td>
                                 <td>{element.name}</td>
                                 <td>{element.role}</td>
-                                
+                                <td><Link to='view'><i className="fa-solid fa-eye"></i></Link></td>
 
                             </tr>
                             </tbody>

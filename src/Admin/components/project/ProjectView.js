@@ -62,8 +62,8 @@ export default function ProjectView(){
             </div>
             
             <div className="container table-responsive">
-               <table className="table table-striped table-hover table-primary">
-                    <thead>
+               <table className="table  table-hover ">
+                    <thead className='text-primary'>
                         <tr>
                             <td>Sr No</td>
                             <td>Project Id</td>
@@ -71,6 +71,7 @@ export default function ProjectView(){
                             <td>Project Manager</td>
                             <td>Project Deadline</td>
                             <td>Status</td>
+                            <td>View</td>
                         </tr>
                     </thead>
                     
@@ -83,7 +84,7 @@ export default function ProjectView(){
                                 <td>{element.manager}</td>
                                 <td>{element.deadline}</td>
                                 <td>{element.status}</td>
-
+                                <td><Link to='viewsingle'><i className="fa-solid fa-eye"></i></Link></td>
                             </tr>
                             </tbody>
                         ))}

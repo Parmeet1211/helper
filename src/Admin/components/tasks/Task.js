@@ -9,21 +9,31 @@ export default function Task(){
         <>
             <div className="container my-5 py-5">
                 <div className="row">
-                    <div className="col-md-6 mb-3 mb-sm-0">
+                    <div className="col-md-4 mb-3 mb-sm-0">
                         <Link to='taskview'>
-                            <div className="card text-bg-info mb-3">
+                            <div className="card mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                                 <div className="card-body">
-                                    <h5 className="card-title">Current Tasks</h5>   
+                                    <h5 className="card-title text-dark">Current Tasks</h5>   
                                 </div>
                             </div>
                         </Link>
                     </div>
                     
-                    <div className="col-md-6">
+                    <div className="col-md-4">
                         <Link to='addtask'>
-                        <div className="card text-bg-light mb-3">
+                        <div className="card  mb-3 text-dark" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
                                 <h5 className="card-title">Add new Task</h5>    
+                            </div>
+                        </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-4">
+                        <Link to='assigntask'>
+                        <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
+                            <div className="card-body">
+                                <h5 className="card-title text-dark">Assign Task</h5>    
                             </div>
                         </div>
                         </Link>
@@ -32,28 +42,28 @@ export default function Task(){
                 <div className='row my-5'>
                     
                     <div className='col-lg-5 col-xl-5'>
-                        <div className="card mb-3 bg-light">
+                        <div className="card mb-3 ">
                                 <div className="card-body">
                                     <h5 className="card-title">No of Tasks</h5> 
                                         <hr/> 
                                         <h4>{tasknum}</h4> 
                                 </div>
                         </div>
-                        <div className="card mb-3 bg-info">
+                        <div className="card mb-3 ">
                                 <div className="card-body">
                                     <h5 className="card-title">Running</h5> 
                                     <hr/> 
                                     <h4>{running}</h4> 
                                 </div>
                         </div>
-                        <div className="card mb-3 bg-light">
+                        <div className="card mb-3 ">
                                 <div className="card-body">
                                     <h5 className="card-title">Done</h5> 
                                     <hr/> 
                                     <h4>{done}</h4> 
                                 </div>
                         </div>
-                        <div className="card mb-3 bg-info">
+                        <div className="card mb-3 ">
                                 <div className="card-body">
                                     <h5 className="card-title">Pending</h5> 
                                     <hr/> 

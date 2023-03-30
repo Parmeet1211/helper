@@ -7,7 +7,7 @@ export default function AdminHeader(){
             <header id="header" className="fixed-top">
                 <div className="container d-flex align-items-center justify-content-between">
 
-                <h1 className="logo"><Link>Helper</Link></h1>                
+                <h1 className="logo"><Link to="/admin">Helper</Link></h1>                
                 
 
                 <nav id="navbar" className="navbar">
@@ -18,7 +18,7 @@ export default function AdminHeader(){
                     
                     <li><Link to='employee' className="nav-link scrollto" >Employees</Link></li>
                     <li><Link to='report' className="nav-link scrollto" >Reports</Link></li>
-
+                    <li><Link to='board' className="nav-link scrollto" >Board</Link></li>
                     <li><Link to='/'
                     className="getstarted scrollto" >Sign Out</Link></li>
                     </ul>
