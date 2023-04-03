@@ -55,6 +55,7 @@ export default function ViewSingle(){
     ]
     return(
         <>
+        <div className="container my-5 py-5">
             <div className="my-5 py-5">
                 <div className="col text-center my-5 py-5 ">
                     <h1 className="font-weight-bolder">Project Name : {projects[0].name}</h1>
@@ -66,6 +67,7 @@ export default function ViewSingle(){
 
 
                 </div>
+            </div>
             </div>
         </>
     )

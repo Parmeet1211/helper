@@ -41,15 +41,17 @@ export default function View(){
     ]
     return(
         <>
-            <div className="my-5 py-5">
+        <div className="container">
+            <div className="my-5 py-5 row">
                 <div className="col text-center my-5 py-5">
-                    <h1 className="font-weight-bolder">Employee Name : {projects[0].name}</h1>
+                    <h5 className="fw-bolder">Employee Name : {projects[0].name}</h5>
                     <h5></h5>
                     <h6 className="text-dark">ID : {projects[0].id}</h6>
                     <h6 className="text-dark">Role : {projects[0].role}</h6>
 
                 </div>
             </div>
+        </div>
         </>
     )
 }

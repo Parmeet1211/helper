@@ -78,6 +78,7 @@ export default function TaskView(){
                             <td>Priority</td>
                             <td>Status</td>
                             <td>View</td>
+                            <td>Update</td>
                         </tr>
                     </thead>
                     
@@ -92,7 +93,8 @@ export default function TaskView(){
                                 <td>{element.deadline}</td>
                                 <td>{element.priority}</td>
                                 <td>{element.status}</td>
-                                <td><Link><i className="fa-solid fa-eye"></i></Link></td>
+                                <td><Link to='singletask'><i className="fa-solid fa-eye"></i></Link></td>
+                                <td><Link to='update'><i class="fa-solid fa-pen"></i></Link></td>
                             </tr>
                             </tbody>
                         ))}

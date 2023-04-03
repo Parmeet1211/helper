@@ -72,6 +72,7 @@ export default function ProjectView(){
                             <td>Project Deadline</td>
                             <td>Status</td>
                             <td>View</td>
+                            <td>Update</td>
                         </tr>
                     </thead>
                     
@@ -85,6 +86,7 @@ export default function ProjectView(){
                                 <td>{element.deadline}</td>
                                 <td>{element.status}</td>
                                 <td><Link to='viewsingle'><i className="fa-solid fa-eye"></i></Link></td>
+                                <td><Link to='update'><i class="fa-solid fa-pen"></i></Link></td>
                             </tr>
                             </tbody>
                         ))}

@@ -19,6 +19,8 @@ export default function AdminHeader(){
                     <li><Link to='employee' className="nav-link scrollto" >Employees</Link></li>
                     <li><Link to='report' className="nav-link scrollto" >Reports</Link></li>
                     <li><Link to='board' className="nav-link scrollto" >Board</Link></li>
+                    <li><Link to='enquiry' className="nav-link scrollto" >Enquiry</Link></li>
+                    <li><Link to='teams' className="nav-link scrollto" >Teams</Link></li>
                     <li><Link to='/'
                     className="getstarted scrollto" >Sign Out</Link></li>
                     </ul>

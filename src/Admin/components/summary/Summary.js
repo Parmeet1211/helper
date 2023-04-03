@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom"
 import Basic from "./Basic"
 import Progress from "./Progress"
+import Status from "./Status"
 import Team from "./Team"
 export default function Summary(){
     return(
@@ -11,7 +13,7 @@ export default function Summary(){
                     <Team role="Quality Assurance Engg" num="08"/>   
                 </div>
                 <div className="row">
-                   <div className="col col-lg-6 mt-3">
+                   <div className="col-sm-12 col-lg-6 mt-3">
                    <div className="card text-bg-white mb-3">
                             <div className="card-header">Progress</div>
                             <div className="card-body">
@@ -62,6 +64,13 @@ export default function Summary(){
                     <Basic part='Total Tasks' count='265'/>
                     <Basic part='Monthly Progress' count='64%'/>
 
+
+                </div>
+                <div className='row'>
+                    <Status workload="30%" team="Designer"/>
+                    <Status workload="35%" team="Developer"/>
+                    <Status workload="15%" team="Testing"/>
+                    <Status workload="20%" team="Maintenance"/>
 
                 </div>
             </div>

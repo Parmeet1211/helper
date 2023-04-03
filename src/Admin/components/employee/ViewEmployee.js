@@ -54,6 +54,7 @@ export default function ViewEmployee(){
                             <td>Employee Name</td>
                             <td>Role</td>
                             <td>View</td>
+                            <td>Update</td>
                         </tr>
                     </thead>
                     
@@ -65,6 +66,7 @@ export default function ViewEmployee(){
                                 <td>{element.name}</td>
                                 <td>{element.role}</td>
                                 <td><Link to='view'><i className="fa-solid fa-eye"></i></Link></td>
+                                <td><Link to='update'><i class="fa-solid fa-pen"></i></Link></td>
 
                             </tr>
                             </tbody>
