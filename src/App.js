@@ -35,6 +35,14 @@ import UpdateEmployee from './Admin/components/employee/UpdateEmployee';
 import UpdateProject from './Admin/components/project/UpdateProject';
 import UpdateTask from './Admin/components/tasks/UpdateTask';
 import EmployeeTask from './User/components/task/EmployeeTask';
+import TeamView from './Admin/components/teams/TeamView';
+import TaskDetail from './User/components/task/TaskDetail';
+import History from './User/components/task/History';
+import EnquiryUser from './User/components/enquiry/EnquiryUser';
+import Replies from './User/components/enquiry/Replies';
+import UserHome from './User/components/home/UserHome';
+import UserTeam from './User/components/home/UserTeam';
+import UserProject from './User/components/home/UserProjects';
 
 function App() {
   return (
@@ -49,34 +57,42 @@ function App() {
         </Route>
         <Route path='/admin' element={<Dashboard/>}>
           <Route path='/admin' element={<Summary/>}/>
-          <Route path='project' element={<Project/>}/>
-          <Route path='project/projectview' element={<ProjectView/>}/>
-          <Route path='project/projectview/update' element={<UpdateProject/>}/>
-          <Route path='project/projectview/viewsingle' element={<ViewSingle/>}/>
-          <Route path='project/addproject' element={<AddProject/>} /> 
-          <Route path='task' element={<Task/>}/>
-          <Route path='task/taskview' element={<TaskView/>}/>
-          <Route path='task/taskview/update' element={<UpdateTask/>}/>
-          <Route path='task/taskview/singletask' element={<SingleTask/>}/>
-          <Route path='task/addtask' element={<AddTask/>}/>
-          <Route path='task/assigntask' element={<AssignTask/>}/>
-          <Route path='employee' element={<Employee/>}/>
-          <Route path='employee/addemployee' element={<AddEmployee/>}/>
+          <Route path='/admin/project' element={<Project/>}/>
+          <Route path='/admin/projectview' element={<ProjectView/>}/>
+          <Route path='/admin/updateproject' element={<UpdateProject/>}/>
+          <Route path='/admin/viewsingle' element={<ViewSingle/>}/>
+          <Route path='/admin/addproject' element={<AddProject/>} /> 
+          <Route path='/admin/task' element={<Task/>}/>
+          <Route path='/admin/taskview' element={<TaskView/>}/>
+          <Route path='/admin/updatetask' element={<UpdateTask/>}/>
+          <Route path='/admin/singletask' element={<SingleTask/>}/>
+          <Route path='/admin/addtask' element={<AddTask/>}/>
+          <Route path='/admin/assigntask' element={<AssignTask/>}/>
+          <Route path='/admin/employee' element={<Employee/>}/>
+          <Route path='/admin/addemployee' element={<AddEmployee/>}/>
           {/* <Route path='employee/addemployee' element={<AddEmployee/>}/> */}
-          <Route path='employee/viewemployee' element={<ViewEmployee/>}/>
-          <Route path='employee/viewemployee/update' element={<UpdateEmployee/>}/>
-          <Route path='employee/viewemployee/view' element={<View/>}/>
-          <Route path='report' element={<Report/>}/>
-          <Route path='board' element={<Board/>}/>
-          <Route path='enquiry' element={<Enquiry/>}/>
-          <Route path='enquiry/reply' element={<Reply/>}/>
-          <Route path='teams' element={<Team/>}/>
-          <Route path='teams/details' element={<Detail/>}/>
+          <Route path='/admin/viewemployee' element={<ViewEmployee/>}/>
+          <Route path='/admin/updateemployee' element={<UpdateEmployee/>}/>
+          <Route path='/admin/view' element={<View/>}/>
+          <Route path='/admin/report' element={<Report/>}/>
+          <Route path='/admin/board' element={<Board/>}/>
+          <Route path='/admin/enquiry' element={<Enquiry/>}/>
+          <Route path='/admin/reply' element={<Reply/>}/>
+          <Route path='/admin/teams' element={<Team/>}/>
+          <Route path='/admin/teamview' element={<TeamView/>}/>
+          <Route path='/admin/details' element={<Detail/>}/>
         </Route>
         <Route path='/user' element={<Master/>}>
+          <Route path='/user' element={<UserHome/>}/>
           <Route path='profile' element={<Profile/>}/>
-          <Route path='profile/update' element={<UpdateProfile/>}/>
-          <Route path='employeetask' element={<EmployeeTask/>}/>
+          <Route path='/user/update' element={<UpdateProfile/>}/>
+          <Route path='/user/employeetask' element={<EmployeeTask/>}/>
+          <Route path='/user/taskdetail' element={<TaskDetail/>}/>
+          <Route path='/user/history' element={<History/>}/>
+          <Route path='/user/enquiry' element={<EnquiryUser/>}/>
+          <Route path='/user/reply' element={<Replies/>}/>
+          <Route path='/user/teams' element={<UserTeam/>}/>
+          <Route path='/user/projects' element={<UserProject/>}/>
         </Route>
       </Routes>
     </Router>

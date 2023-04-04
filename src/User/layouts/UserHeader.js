@@ -11,9 +11,9 @@ export default function UserHeader(){
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                    <li><Link className="nav-link scrollto " to='/'>Home</Link></li>
-                    <li><Link className="nav-link scrollto" to='/about'>About</Link></li>
-                    <li><Link className="nav-link scrollto" to='employeetask'>Tasks</Link></li>
+                    <li><Link className="nav-link scrollto " to='/user'>Home</Link></li>
+                    <li><Link className="nav-link scrollto" to='/user/enquiry'>Enquiry</Link></li>
+                    <li><Link className="nav-link scrollto" to='/user/employeetask'>Tasks</Link></li>
                     
                     <li><Link to='profile' className="nav-link scrollto" >Profile</Link></li>
                     <li><Link className="getstarted scrollto" to='/'>Sign Out</Link></li>

@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
-
-export default function AddTask(){
+import { Link } from "react-router-dom"
+export default function EnquiryUser(){
+    const types=['Function Test','Function Failure','Changes(effect)','Change (causes)','Controls','Action','Bugs','Need','Confirm']
+    const status = ['In Progress','To Do','Done']
+    const priority = ['High','Medium','Low']
     return(
         <>
             <div className="container my-5 py-5">
-                <div className="row">
-                    <div className="col text-end">
-                        <Link to='/admin/taskview'><button className="btn btn-warning">View</button>
-                        </Link>
-                    </div>
-
+            <div className="row">
+                <div className="col my-3 text-end">
+                    <Link to='/user/reply'><button className="btn btn-warning">View Replies</button></Link>
                 </div>
-                <div className="card text-bg-light my-5 mb-3">
+            </div>
+            <div className="card text-bg-light my-5 mb-3">
                     <div className="card-body">
                     <form>
                         <div className="row">
@@ -31,21 +31,29 @@ export default function AddTask(){
                         <div className="row">
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputCity">Priority</label>
-                                <input type="text" className="form-control" id="inputCity"/>
+                                <select id="inputState" className="form-control">
+                                    <option selected>Choose</option>
+                                    {priority.map((element,index)=>(
+                                        <option key={index}>{element}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputCity">Status</label>
-                                <input type="text" className="form-control" id="inputCity"/>
+                                <select id="inputState" className="form-control">
+                                    <option selected>Choose</option>
+                                    {status.map((element,index)=>(
+                                        <option key={index}>{element}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="form-group col-md-4">
                                 <label htmlFor="inputState">Category</label>
                                 <select id="inputState" className="form-control">
                                     <option selected>Choose</option>
-                                    <option>Web Development</option>
-                                    <option>Android Application</option>
-                                    <option>Machine Learning</option>
-                                    <option>Networking</option>
-                                    <option>Data Analyst</option>
+                                    {types.map((element,index)=>(
+                                        <option key={index}>{element}</option>
+                                    ))}
                                 </select>
                             </div>
                             <div className="form-group col-md-2">
@@ -53,15 +61,8 @@ export default function AddTask(){
                                 <input type="date" className="form-control" id="inputZip"/>
                             </div>
                         </div>
-                        <div className="form-group">
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="gridCheck"/>
-                                <label className="form-check-label" htmlFor="gridCheck">
-                                    Create new Task
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Create</button>
+                        
+                        <button type="submit" className="btn btn-primary mt-3">Submit</button>
                     </form>  
                     </div>
                 </div>

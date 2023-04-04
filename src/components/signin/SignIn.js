@@ -44,6 +44,9 @@ export default function SignIn(){
                                                     <Link to='/admin'>
                                                     <button type="button" className="btn btn-primary btn-lg">Sign In</button>
                                                     </Link>
+                                                    <Link to='/user'>
+                                                    <button type="button" className="btn ms-2 btn-primary btn-lg">Sign In User</button>
+                                                    </Link>
                                                 </div>
 
                                             </form>

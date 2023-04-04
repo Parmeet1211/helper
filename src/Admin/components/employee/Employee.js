@@ -11,7 +11,7 @@ export default function Employee(){
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-6 mb-3 mb-sm-0">
-                        <Link to='viewemployee'>
+                        <Link to='/admin/viewemployee'>
                             <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                                 <div className="card-body">
                                     <h5 className="card-title text-dark">Employees</h5>   
@@ -21,7 +21,7 @@ export default function Employee(){
                     </div>
                     
                     <div className="col-md-6">
-                        <Link to='addemployee'>
+                        <Link to='/admin/addemployee'>
                         <div className="card mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
                                 <h5 className="card-title text-dark">Add new Employee</h5>    

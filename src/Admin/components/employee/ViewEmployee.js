@@ -40,9 +40,17 @@ export default function ViewEmployee(){
     return(
         <>
             <div className="container my-5 py-5 text-end h2">
-                <input className='border border-light' type='search'></input>
-                <Link >Filter<i className="fa-solid fa-filter "></i></Link>
-                
+                <div className='row'>
+                    <div className='col-6'>
+                        <input className='border border-light' type='search'></input>
+                        <Link >Filter<i className="fa-solid fa-filter "></i></Link>
+                    </div>
+                    <div className='col-6 text-end'>
+                        <Link to='/admin/addemployee'>
+                        <button className='btn btn-warning'>Add</button>
+                        </Link>
+                    </div>
+                </div>
             </div>
             
             <div className="container table-responsive">
@@ -65,8 +73,8 @@ export default function ViewEmployee(){
                                 <td>{element.id}</td>
                                 <td>{element.name}</td>
                                 <td>{element.role}</td>
-                                <td><Link to='view'><i className="fa-solid fa-eye"></i></Link></td>
-                                <td><Link to='update'><i class="fa-solid fa-pen"></i></Link></td>
+                                <td><Link to='/admin/view'><i className="fa-solid fa-eye"></i></Link></td>
+                                <td><Link to='/admin/updateemployee'><i class="fa-solid fa-pen"></i></Link></td>
 
                             </tr>
                             </tbody>

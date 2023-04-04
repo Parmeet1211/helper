@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 export default function Detail(){
     const designer=[
         {
@@ -91,6 +92,11 @@ export default function Detail(){
     return(
         <>
             <div className=" container my-5 py-5">
+                <div className="row">
+                        <div  className="col text-end">
+                        <Link to='/admin/teams'><button className="btn btn-warning">Add</button></Link>
+                        </div>
+                </div>
                 <div className="row">
                     <h1>Project : ECommerce</h1>
                     <h2>Project ID : 76243</h2>

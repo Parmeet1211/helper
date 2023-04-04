@@ -9,7 +9,7 @@ export default function Project(){
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-6 mb-3 mb-sm-0">
-                        <Link to='projectview'>
+                        <Link to='/admin/projectview'>
                             <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                                 <div className="card-body">
                                     <h5 className="card-title text-dark">Current Projects</h5>   
@@ -19,7 +19,7 @@ export default function Project(){
                     </div>
                     
                     <div className="col-md-6">
-                        <Link to='addproject'>
+                        <Link to='/admin/addproject'>
                         <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
                                 <h5 className="card-title text-dark">Add new Project</h5>    

@@ -10,7 +10,7 @@ export default function Task(){
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-4 mb-3 mb-sm-0">
-                        <Link to='taskview'>
+                        <Link to='/admin/taskview'>
                             <div className="card mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                                 <div className="card-body">
                                     <h5 className="card-title text-dark">Current Tasks</h5>   
@@ -20,7 +20,7 @@ export default function Task(){
                     </div>
                     
                     <div className="col-md-4">
-                        <Link to='addtask'>
+                        <Link to='/admin/addtask'>
                         <div className="card  mb-3 text-dark" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
                                 <h5 className="card-title">Add new Task</h5>    
@@ -30,7 +30,7 @@ export default function Task(){
                     </div>
 
                     <div className="col-md-4">
-                        <Link to='assigntask'>
+                        <Link to='/admin/assigntask'>
                         <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
                                 <h5 className="card-title text-dark">Assign Task</h5>    

@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
+
 export default function Reply(){
     return(
         <>
             <div className="container my-5 py-5">
+                <div className="row">
+                    <div className="col text-end">
+                        <Link to='/admin/enquiry'>
+                        <button className="btn btn-warning">View</button>
+                        </Link>
+                    </div>
+                </div>
+
                 <div className="row my-5 py-5">
                     <div className="col">
                         <div className="card my-5 mb-3">

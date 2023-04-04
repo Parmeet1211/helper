@@ -67,7 +67,7 @@ export default function Enquiry(){
                                 <td>{element.taskId}</td>
                                 <td>{element.description}</td>
                                 <td>{element.type}</td>
-                                <td><Link to='reply'><i class="fa-solid fa-reply"></i></Link></td>
+                                <td><Link to='/admin/reply'><i class="fa-solid fa-reply"></i></Link></td>
                             </tr>
                             </tbody>
                         ))}

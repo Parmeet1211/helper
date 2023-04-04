@@ -60,9 +60,16 @@ export default function TaskView(){
     return(
         <>
             <div className="container my-5 py-5 text-end h2">
-                <input className='border border-light' type='search'></input>
-                <Link >Filter<i className="fa-solid fa-filter "></i></Link>
-                
+                <div className='row'>
+                    <div className='col-6'>
+                        <input className='border border-light' type='search'></input>
+                        <Link >Filter<i className="fa-solid fa-filter "></i></Link>
+                    </div>
+                    <div className='col-6'>
+                        <Link to='/admin/addtask'><button className='btn btn-warning'>Add</button>
+                        </Link>
+                    </div>
+                </div>     
             </div>
             
             <div className="container table-responsive">
@@ -93,8 +100,8 @@ export default function TaskView(){
                                 <td>{element.deadline}</td>
                                 <td>{element.priority}</td>
                                 <td>{element.status}</td>
-                                <td><Link to='singletask'><i className="fa-solid fa-eye"></i></Link></td>
-                                <td><Link to='update'><i class="fa-solid fa-pen"></i></Link></td>
+                                <td><Link to='/admin/singletask'><i className="fa-solid fa-eye"></i></Link></td>
+                                <td><Link to='/admin/updatetask'><i class="fa-solid fa-pen"></i></Link></td>
                             </tr>
                             </tbody>
                         ))}

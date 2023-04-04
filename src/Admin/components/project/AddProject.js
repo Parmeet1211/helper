@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom"
 export default function AddProject(){
     return(
         <>
             <div className="container my-5 py-5">
+                <div className="row">
+                    <div className="col text-end">
+                        <Link to='/admin/projectview'><button className="btn btn-warning">View</button>
+                        </Link>
+                    </div>
+                </div>
                 <div className="card text-bg-light my-5 mb-3">
                     <div className="card-body">
                     <form>

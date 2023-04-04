@@ -8,7 +8,7 @@ export default function Profile(){
                     <div className="col-md-5 mt-3">
                         <img src="/assets/img/team/team-1.jpg" className="image-fluid w-75" />
                         <div className="mt-5 text-start">
-                            <Link to='update'><span className="btn btn-primary">Update Profile</span></Link>
+                            <Link to='/user/update'><span className="btn btn-primary">Update Profile</span></Link>
                         </div>
                     </div>
                     <div className="col-md-7 mt-3">
