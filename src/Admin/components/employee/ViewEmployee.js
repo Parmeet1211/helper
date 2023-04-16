@@ -63,6 +63,7 @@ export default function ViewEmployee(){
                             <td>Role</td>
                             <td>View</td>
                             <td>Update</td>
+                            <td>Delete</td>
                         </tr>
                     </thead>
                     
@@ -75,7 +76,7 @@ export default function ViewEmployee(){
                                 <td>{element.role}</td>
                                 <td><Link to='/admin/view'><i className="fa-solid fa-eye"></i></Link></td>
                                 <td><Link to='/admin/updateemployee'><i class="fa-solid fa-pen"></i></Link></td>
-
+                                <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>
                             </tbody>
                         ))}

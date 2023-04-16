@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export default function AssignTask(){
-    const taskId=['t24612','t585760','t34345','t95778','t967673','t78959'];
-    const empId=['emp4565','emp67893','emp7893','emp87580','emp90658','emp36924']
+    const taskId=['design','admin side','routing','applying algo','oops','test'];
+    const empId=['Ramesh','Suresh','Satyam','Anushree','Kalpana','Rajender']
     return(
         <>
             <div className="container my-5 py-5">
@@ -22,7 +22,7 @@ export default function AssignTask(){
                     <form>
                         <div className="row my-2">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputState">Task Id</label>
+                                <label htmlFor="inputState">Task Name</label>
                                 <select id="inputState" className="form-control">
                                     <option selected>Choose</option>
                                     {taskId.map((element)=>(
@@ -31,7 +31,7 @@ export default function AssignTask(){
                                 </select>
                             </div>
                             <div className="form-group col-md-6">
-                            <label htmlFor="inputState">Emp Id</label>
+                            <label htmlFor="inputState">Employee Name</label>
                                 <select id="inputState" className="form-control">
                                     <option selected>Choose</option>
                                     {empId.map((element)=>(

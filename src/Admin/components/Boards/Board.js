@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Board(){
     const num=4;
     const todo=[
@@ -100,8 +102,10 @@ export default function Board(){
                         </div>
                         <div className="row">
                             {todo.map((element,index)=>(
+                                
                                 <div className="col-md-11 ">
-                                <div className="card  mb-3 bg-light" key={index}>
+                                <Link to='/admin/singletask'>
+                                <div className="card  mb-3 bg-light text-dark" key={index}>
                                     <div className="card-header  bg-light">
                                         <h5>{element.task}</h5>
                                         <h5>ID : {element.id}</h5>
@@ -112,7 +116,9 @@ export default function Board(){
                                       <h5>{element.deadline}</h5> 
                                     </div>
                                 </div>
+                                </Link>
                                 </div>
+                                
                             ))}
                         </div>
                     </div>
@@ -125,8 +131,10 @@ export default function Board(){
                         </div>
                         <div className="row">
                             {doing.map((element,index)=>(
+                                
                                 <div className="col-md-11 ">
-                                <div className="card  mb-3 bg-light" key={index}>
+                                <Link to='/admin/singletask'>
+                                <div className="card  mb-3 bg-light text-dark" key={index}>
                                     <div className="card-header  bg-light">
                                         <h5>{element.task}</h5>
                                         <h5>ID : {element.id}</h5>
@@ -136,8 +144,10 @@ export default function Board(){
                                       <p>{element.description}</p> 
                                       <h5>{element.deadline}</h5> 
                                     </div>
+                                </div> 
+                                </Link>
                                 </div>
-                                </div>
+                               
                             ))}
                         </div>
                     </div>
@@ -150,8 +160,10 @@ export default function Board(){
                         </div>
                         <div className="row">
                             {done.map((element,index)=>(
+                                
                                 <div className="col-md-11 ">
-                                <div className="card  mb-3 bg-light" key={index}>
+                                <Link to='/admin/singletask'>
+                                <div className="card  mb-3 bg-light text-dark" key={index}>
                                     <div className="card-header  bg-light">
                                         <h5>{element.task}</h5>
                                         <h5>ID : {element.id}</h5>
@@ -162,7 +174,9 @@ export default function Board(){
                                        
                                     </div>
                                 </div>
+                                </Link>
                                 </div>
+                                
                             ))}
                         </div>
                     </div>

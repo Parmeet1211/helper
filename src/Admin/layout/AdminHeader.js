@@ -12,15 +12,87 @@ export default function AdminHeader(){
 
                 <nav id="navbar" className="navbar">
                     <ul>
+                    {/* <li><Link to='/admin/task' className="nav-link scrollto" >Tasks</Link></li> */}
                     
-                    <li><Link to='/admin/project' className="nav-link scrollto" >Project</Link></li>
-                    <li><Link to='/admin/task' className="nav-link scrollto" >Tasks</Link></li>
+                    {/* <li><Link to='/admin/employee' className="nav-link scrollto" >Employees</Link></li> */}
+                    {/* <li><Link to='/admin/report' className="nav-link scrollto" >Reports</Link></li> */}
                     
-                    <li><Link to='/admin/employee' className="nav-link scrollto" >Employees</Link></li>
-                    <li><Link to='/admin/report' className="nav-link scrollto" >Reports</Link></li>
-                    <li><Link to='/admin/board' className="nav-link scrollto" >Board</Link></li>
-                    <li><Link to='/admin/enquiry' className="nav-link scrollto" >Enquiry</Link></li>
-                    <li><Link to='/admin/teams' className="nav-link scrollto" >Teams</Link></li>
+                    
+                    {/* <li><Link to='/admin/teams' className="nav-link scrollto" >Teams</Link></li> */}
+                    <li>
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Project
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <Link to='/admin/project'>Project</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/projectview'>Current Projects</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/addproject'>Add new Project</Link>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    </li>
+                    <li>
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Tasks
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <Link to='/admin/project'>Tasks</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/taskview'>Current Tasks</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/addtask'>Add new Task</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/assigntask'>Assign Task</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    </li>
+                    <li>
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Teams
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <Link to='/admin/teams'>Create Team</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/teamview'>View Team</Link>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    </li>
+                    <li>
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Employees
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <Link to='/admin/addemployee'>Add Employee</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/viewemployee'>View Employees</Link>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    </li>
+                    <li ><Link to='/admin/board' className="nav-link scrollto text-dark " ><button className='btn'>Board</button></Link></li>
+                    <li><Link to='/admin/enquiry' className="nav-link scrollto text-dark" ><button className='btn'>Enquiry</button></Link></li>
                     <li><Link to='/'
                     className="getstarted scrollto" >Sign Out</Link></li>
                     </ul>

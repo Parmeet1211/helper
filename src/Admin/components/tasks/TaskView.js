@@ -8,7 +8,7 @@ export default function TaskView(){
             category:'Web Development',
             deadline:'22-10-22',
             priority:'medium',
-            status:'completed'
+            progress: '40'
             
         },
         {
@@ -18,7 +18,7 @@ export default function TaskView(){
             category:'Networking',
             deadline:'13-07-23',
             priority:'high',
-            status:'not completed'
+            progress: '60'
         },
         {
             id:'467845',
@@ -27,7 +27,7 @@ export default function TaskView(){
             category:'Machine Learning',
             deadline:'17-01-23',
             priority:'high',
-            status:'completed'
+            progress: '50'
         },
         {
             id:'326889',
@@ -36,7 +36,7 @@ export default function TaskView(){
             category:'Data Analyst',
             deadline:'07-11-22',
             priority:'medium',
-            status:'completed'
+            progress: '70'
         },
         {
             id:'548384',
@@ -45,7 +45,7 @@ export default function TaskView(){
             category:'Machine Learning',
             deadline:'17-01-23',
             priority:'high',
-            status:'completed'
+            progress: '60'
         },
         {
             id:'467845',
@@ -54,7 +54,7 @@ export default function TaskView(){
             category:'Web Development',
             deadline:'27-04-23',
             priority:'high',
-            status:'not completed'
+            progress: '40'
         }
     ]
     return(
@@ -83,9 +83,10 @@ export default function TaskView(){
                             <td>Category</td>
                             <td>Deadline</td>
                             <td>Priority</td>
-                            <td>Status</td>
+                            <td>progress</td>
                             <td>View</td>
                             <td>Update</td>
+                            <td>Delete</td>
                         </tr>
                     </thead>
                     
@@ -99,9 +100,10 @@ export default function TaskView(){
                                 <td>{element.category}</td>
                                 <td>{element.deadline}</td>
                                 <td>{element.priority}</td>
-                                <td>{element.status}</td>
+                                <td>{element.progress} %</td>
                                 <td><Link to='/admin/singletask'><i className="fa-solid fa-eye"></i></Link></td>
-                                <td><Link to='/admin/updatetask'><i class="fa-solid fa-pen"></i></Link></td>
+                                <td><Link to='/admin/updatetask'><i className="fa-solid fa-pen"></i></Link></td>
+                                <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>
                             </tbody>
                         ))}

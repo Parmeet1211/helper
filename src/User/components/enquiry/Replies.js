@@ -64,8 +64,8 @@ export default function Replies(){
                         <div className="card">
                             <div className="card-header">
                                 <h5>Enquiry No : {element.enqNo}</h5>
-                                <h5>Task Id : {element.taskId}</h5>
-                                <h3>Type : {element.type}</h3>
+                                {/* <h5>Task Id : {element.taskId}</h5> */}
+                                {/* <h3>Type : {element.type}</h3> */}
                             </div>
                             <div className="card-body">
                                 <p>

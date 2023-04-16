@@ -43,6 +43,7 @@ import Replies from './User/components/enquiry/Replies';
 import UserHome from './User/components/home/UserHome';
 import UserTeam from './User/components/home/UserTeam';
 import UserProject from './User/components/home/UserProjects';
+import ReportUser from './User/components/report/ReportUser';
 
 function App() {
   return (
@@ -93,6 +94,7 @@ function App() {
           <Route path='/user/reply' element={<Replies/>}/>
           <Route path='/user/teams' element={<UserTeam/>}/>
           <Route path='/user/projects' element={<UserProject/>}/>
+          <Route path='/user/reportuser' element={<ReportUser/>}/>
         </Route>
       </Routes>
     </Router>

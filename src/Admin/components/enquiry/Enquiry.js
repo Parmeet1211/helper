@@ -52,7 +52,7 @@ export default function Enquiry(){
                             <th>Emp ID</th>
                             <th>Task ID</th>
                             <th>Description</th>
-                            <th>Type</th>
+                            
                             <th>Reply</th>
                         </tr>
                     </thead>
@@ -66,7 +66,7 @@ export default function Enquiry(){
                                 <td>{element.empId}</td>
                                 <td>{element.taskId}</td>
                                 <td>{element.description}</td>
-                                <td>{element.type}</td>
+                               
                                 <td><Link to='/admin/reply'><i class="fa-solid fa-reply"></i></Link></td>
                             </tr>
                             </tbody>

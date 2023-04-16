@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 export default function Team() {
     const teams = ['Designing', 'Development', 'Testing', 'Maintenance'];
-    const projectId = ['234', '232', '657', '343', '325', '098'];
-    const empId = ['emp123', 'emp456', 'emp789', 'emp912', 'emp622', 'emp868'];
+    const projectId = ['ECommerce', 'System Detection', 'AI for image', 'Networks', 'Food Delivary', 'School Management'];
+    const empId = ['Radha', 'Shaym', 'Manohar', 'Rameshwari', 'Nishan', 'Aryan'];
     const team=[
         {
             name : "ECommerce",
@@ -84,7 +84,7 @@ export default function Team() {
                                             </select>
                                         </div>
                                         <div className="form-group col-md-6">
-                                            <label htmlFor="inputEmail4">Project Id</label>
+                                            <label htmlFor="inputEmail4">Project name</label>
                                             <select className="form-select">
                                                 <option selected >Choose</option>
                                                 {projectId.map((element, index) => (
@@ -103,7 +103,7 @@ export default function Team() {
                                         </div>
                                     </div>
 
-                                    <button type="submit" className="btn btn-primary my-3">Reply</button>
+                                    <button type="submit" className="btn btn-primary my-3">Create</button>
                                 </form>
                             </div>
                         </div>

@@ -81,6 +81,7 @@ export default function ProjectView(){
                             <td>Status</td>
                             <td>View</td>
                             <td>Update</td>
+                            <td>Delete</td>
                         </tr>
                     </thead>
                     
@@ -95,6 +96,7 @@ export default function ProjectView(){
                                 <td>{element.status}</td>
                                 <td><Link to='/admin/viewsingle'><i className="fa-solid fa-eye"></i></Link></td>
                                 <td><Link to='/admin/updateproject'><i class="fa-solid fa-pen"></i></Link></td>
+                                <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>
                             </tbody>
                         ))}

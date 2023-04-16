@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 export default function AddTask(){
+    const empName = ['Ram','Raju','Sandhya','Ayesha','Neeraj','Siddharth','Mayuri']
+    const Category = ['Web Development','Machine Learning','Android Application','Data Analytics','Networking','DevOps']
+    const status = ['running','todo']
+    const priority = ['medium','high','low']
     return(
         <>
             <div className="container my-5 py-5">
@@ -16,12 +20,17 @@ export default function AddTask(){
                     <form>
                         <div className="row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputEmail4">Task Id</label>
-                                <input type="text" className="form-control" placeholder=" eg ; AB3241" />
+                                <label htmlFor="inputEmail4">Task Name</label>
+                                <input type="text" className="form-control" placeholder=" eg ; Alpha" />
                             </div>
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputPassword4">Employee Id</label>
-                                <input type="text" className="form-control" id="inputPassword4" placeholder="Name"/>
+                                <label htmlFor="inputState">Employee Name</label>
+                                <select id="inputState" className="form-control">
+                                    {empName.map((element,index)=>(
+                                        
+                                        <option key={index+1}>{element}</option>
+                                    ))}
+                                </select>
                             </div>
                         </div>
                         <div className="form-group">
@@ -31,21 +40,27 @@ export default function AddTask(){
                         <div className="row">
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputCity">Priority</label>
-                                <input type="text" className="form-control" id="inputCity"/>
+                                <select id="inputState" className="form-control">
+                                    {priority.map((element,index)=>(
+                                        
+                                        <option key={index+1}>{element}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="form-group col-md-3">
                                 <label htmlFor="inputCity">Status</label>
-                                <input type="text" className="form-control" id="inputCity"/>
+                                <select id="inputState" className="form-control">
+                                    {status.map((element,index)=>(
+                                        <option key={index}>{element}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="form-group col-md-4">
                                 <label htmlFor="inputState">Category</label>
                                 <select id="inputState" className="form-control">
-                                    <option selected>Choose</option>
-                                    <option>Web Development</option>
-                                    <option>Android Application</option>
-                                    <option>Machine Learning</option>
-                                    <option>Networking</option>
-                                    <option>Data Analyst</option>
+                                    {Category.map((element,index)=>(
+                                        <option key={index}>{element}</option>
+                                    ))}
                                 </select>
                             </div>
                             <div className="form-group col-md-2">

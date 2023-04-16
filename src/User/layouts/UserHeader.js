@@ -14,7 +14,7 @@ export default function UserHeader(){
                     <li><Link className="nav-link scrollto " to='/user'>Home</Link></li>
                     <li><Link className="nav-link scrollto" to='/user/enquiry'>Enquiry</Link></li>
                     <li><Link className="nav-link scrollto" to='/user/employeetask'>Tasks</Link></li>
-                    
+                    <li><Link className="nav-link scrollto" to='/user/reportuser'>Report</Link></li>
                     <li><Link to='profile' className="nav-link scrollto" >Profile</Link></li>
                     <li><Link className="getstarted scrollto" to='/'>Sign Out</Link></li>
                     </ul>
