@@ -23,7 +23,7 @@ export default function Reply(){
                                         <input type="text" className="form-control" value='3653' />
                                     </div>
                                     <div className="form-group col-md-6">
-                                        <label htmlFor="inputPassword4">Employee No</label>
+                                        <label htmlFor="inputPassword4">Employee Email</label>
                                         <input type="text" className="form-control" id="inputPassword4"value='emp3745'/>
                                     </div>
                                 </div>

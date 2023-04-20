@@ -45,7 +45,7 @@ export default function AdminHeader(){
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <Link to='/admin/project'>Tasks</Link>
+                                <Link to='/admin/task'>Tasks</Link>
                             </li>
                             <li>
                                 <Link to='/admin/taskview'>Current Tasks</Link>
@@ -91,7 +91,23 @@ export default function AdminHeader(){
                         </ul>
                     </div>
                     </li>
-                    <li ><Link to='/admin/board' className="nav-link scrollto text-dark " ><button className='btn'>Board</button></Link></li>
+                    <li>
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Category
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <Link to='/admin/addcategory'>Add Category</Link>
+                            </li>
+                            <li>
+                                <Link to='/admin/viewcategory'>View Category</Link>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    </li>
+                    <li ><Link to='/admin/board' className="nav-link scrollto text-dark " ><button className='btn pt-2 '>Board</button></Link></li>
                     <li><Link to='/admin/enquiry' className="nav-link scrollto text-dark" ><button className='btn'>Enquiry</button></Link></li>
                     <li><Link to='/'
                     className="getstarted scrollto" >Sign Out</Link></li>

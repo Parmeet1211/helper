@@ -24,6 +24,13 @@ export default function UpdateProfile(){
                                 <input type="text" className="form-control" id="inputCity" value='H No 234 Bandra west,Mumbai,Maharastra,25478'/>
                             </div>
                         </div>
+                        <div className="row">
+                            
+                            <div className="form-group col-md-12">
+                                <label htmlFor="inputCity">Image</label>
+                                <input type='file' className="form-control"/>
+                            </div>
+                        </div>
                         <button type="submit" className="btn btn-primary mt-4 ">Update</button>
                     </form>
                         </div>

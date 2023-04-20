@@ -168,7 +168,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
+  /* padding: 10px 0 10px 30px; */
   font-family: "Krub", sans-serif;
   font-size: 14px;
   font-weight: 600;

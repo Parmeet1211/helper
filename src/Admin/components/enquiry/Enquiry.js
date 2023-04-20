@@ -4,32 +4,32 @@ export default function Enquiry(){
         {
             no : '3466',
             enqy : 'Need of frontend',
-            empId : 'emp56342',
-            taskId : 't4245',
+            empName : 'emp56342',
+            email : 'abc@gmail.com',
             description : 'Need the frontend of the project so that we can check campatibility with backend',
             type : 'Need',
         },
         {
             no : '7566',
             enqy : 'Need of backend',
-            empId : 'emp85742',
-            taskId : 't7545',
+            empName : 'emp85742',
+            email : 'abc@gmail.com',
             description : 'Need the frontend of the project so that we can check campatibility with backend',
             type : 'Need',
         },
         {
             no : '5466',
             enqy : 'Need of frontend',
-            empId : 'emp097852',
-            taskId : 't653',
+            empName : 'emp097852',
+            email : 'abc@gmail.com',
             description : 'Need the frontend of the project so that we can check campatibility with backend',
             type : 'confirm',
         },
         {
             no : '356378',
             enqy : 'Need of frontend',
-            empId : 'emp553548',
-            taskId : 't42453',
+            empName : 'emp553548',
+            email : 'abc@gmail.com',
             description : 'Need the frontend of the project so that we can check campatibility with backend',
             type : 'confirm',
         }
@@ -49,10 +49,9 @@ export default function Enquiry(){
                             <th>Sr No</th>
                             <th>Enq No</th>
                             <th>Enquiry </th>
-                            <th>Emp ID</th>
-                            <th>Task ID</th>
-                            <th>Description</th>
-                            
+                            <th>Emp Name</th>
+                            <th>Email</th>
+                            <th>Description</th>    
                             <th>Reply</th>
                         </tr>
                     </thead>
@@ -63,8 +62,8 @@ export default function Enquiry(){
                                 <td>{index+1}</td>
                                 <td>{element.no}</td>
                                 <td>{element.enqy}</td>
-                                <td>{element.empId}</td>
-                                <td>{element.taskId}</td>
+                                <td>{element.empName}</td>
+                                <td>{element.email}</td>
                                 <td>{element.description}</td>
                                
                                 <td><Link to='/admin/reply'><i class="fa-solid fa-reply"></i></Link></td>

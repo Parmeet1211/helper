@@ -11,11 +11,11 @@ export default function UserHeader(){
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                    <li><Link className="nav-link scrollto " to='/user'>Home</Link></li>
-                    <li><Link className="nav-link scrollto" to='/user/enquiry'>Enquiry</Link></li>
-                    <li><Link className="nav-link scrollto" to='/user/employeetask'>Tasks</Link></li>
-                    <li><Link className="nav-link scrollto" to='/user/reportuser'>Report</Link></li>
-                    <li><Link to='profile' className="nav-link scrollto" >Profile</Link></li>
+                    <li className="px-3"><Link className="nav-link scrollto " to='/user'>Home</Link></li>
+                    <li className="px-3"><Link className="nav-link scrollto " to='/user/enquiry'>Enquiry</Link></li>
+                    <li className="px-3"><Link className="nav-link scrollto" to='/user/employeetask'>Tasks</Link></li>
+                    <li className="px-3"><Link className="nav-link scrollto" to='/user/reportuser'>Report</Link></li>
+                    <li className="px-3"><Link to='profile' className="nav-link scrollto" >Profile</Link></li>
                     <li><Link className="getstarted scrollto" to='/'>Sign Out</Link></li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>

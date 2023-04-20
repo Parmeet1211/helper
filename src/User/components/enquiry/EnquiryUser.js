@@ -1,8 +1,8 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 export default function EnquiryUser(){
-    const types=['Function Test','Function Failure','Changes(effect)','Change (causes)','Controls','Action','Bugs','Need','Confirm']
-    const status = ['In Progress','To Do','Done']
-    const priority = ['High','Medium','Low']
+    const [name,setName] = useState("")
+    
     return(
         <>
             <div className="container my-5 py-5">

@@ -44,6 +44,9 @@ import UserHome from './User/components/home/UserHome';
 import UserTeam from './User/components/home/UserTeam';
 import UserProject from './User/components/home/UserProjects';
 import ReportUser from './User/components/report/ReportUser';
+import AddCategory from './Admin/components/category/AddCategory';
+import ViewCategory from './Admin/components/category/ViewCategory';
+import UpdateCategory from './Admin/components/category/UpdateCategory';
 
 function App() {
   return (
@@ -82,6 +85,9 @@ function App() {
           <Route path='/admin/teams' element={<Team/>}/>
           <Route path='/admin/teamview' element={<TeamView/>}/>
           <Route path='/admin/details' element={<Detail/>}/>
+          <Route path='/admin/addcategory' element={<AddCategory/>}/>
+          <Route path='/admin/viewcategory' element={<ViewCategory/>}/>
+          <Route path='/admin/updatecategory' element={<UpdateCategory/>}/>
         </Route>
         <Route path='/user' element={<Master/>}>
           <Route path='/user' element={<UserHome/>}/>

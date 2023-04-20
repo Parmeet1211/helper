@@ -11,11 +11,11 @@ export default function Header(){
 
                 <nav id="navbar" className="navbar">
                     <ul>
-                    <li><Link className="nav-link scrollto " to='/'>Home</Link></li>
-                    <li><Link className="nav-link scrollto" to='/about'>About</Link></li>
-                    <li><Link className="nav-link scrollto" to='/services'>Services</Link></li>
+                    <li className='px-3'><Link className="nav-link scrollto " to='/'>Home</Link></li>
+                    <li className='px-3'><Link className="nav-link scrollto" to='/about'>About</Link></li>
+                    <li className='px-3'><Link className="nav-link scrollto" to='/services'>Services</Link></li>
                     
-                    <li><Link to='/contact' className="nav-link scrollto" >Contact</Link></li>
+                    <li className='px-3'><Link to='/contact' className="nav-link scrollto" >Contact</Link></li>
                     <li><Link className="getstarted scrollto" to='/signin'>Sign In</Link></li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
