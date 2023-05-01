@@ -8,49 +8,56 @@ export default function ProjectView(){
             name:'ECommerce',
             manager:'Manish',
             deadline:'22-10-22',
-            status:'running'
+            status:'running',
+            type : 'Android'
         },
         {
             id:'12342',
             name:'Image Detection',
             manager:'Shardha Kumari',
             deadline:'05-04-23',
-            status:'completed'
+            status:'completed',
+            type : 'Machine Learning'
         },
         {
             id:'62345',
             name:'Noise Detection',
             manager:'Ram',
             deadline:'18-07-24',
-            status:'Upcoming'
+            status:'Upcoming',
+            type : 'Machine Learning'
         },
         {
             id:'346721',
             name:'News Application',
             manager:'Jyotica Sharma',
             deadline:'24-05-23',
-            status:'running'
+            status:'running',
+            type : 'Android'
         },
         {
             id:'457783',
             name:'Feeling Detection system',
             manager:'Anushree Das',
             deadline:'08-09-23',
-            status:'Upcoming'
+            status:'Upcoming',
+            type : 'Machine Learning'
         },
         {
             id:'72345',
             name:'ECommerce',
             manager:'Ramesh Singh',
             deadline:'27-10-22',
-            status:'completed'
+            status:'completed',
+            type : 'Web Development'
         },
         {
             id:'187345',
             name:'School Management Application',
             manager:'Vishwa',
             deadline:'03-06-23',
-            status:'running'
+            status:'running',
+            type : 'Web Development'
         }
     ]
     return(
@@ -58,7 +65,7 @@ export default function ProjectView(){
             <div className="container my-5 py-5 text-end h2">
                 <div className='row'>
                     <div className='col-6'>
-                        <input className='border border-light' type='search'></input>
+                        <input className='border border-light ' type='search'></input>
                         <Link >Filter<i className="fa-solid fa-filter "></i></Link>
                     </div>
                     <div className='col-6'>
@@ -78,7 +85,7 @@ export default function ProjectView(){
                             <td>Project Name</td>
                             <td>Project Manager</td>
                             <td>Project Deadline</td>
-                            <td>Status</td>
+                            <td>Type</td>
                             <td>View</td>
                             <td>Update</td>
                             <td>Delete</td>
@@ -93,7 +100,7 @@ export default function ProjectView(){
                                 <td>{element.name}</td>
                                 <td>{element.manager}</td>
                                 <td>{element.deadline}</td>
-                                <td>{element.status}</td>
+                                <td>{element.type}</td>
                                 <td><Link to='/admin/viewsingle'><i className="fa-solid fa-eye"></i></Link></td>
                                 <td><Link to='/admin/updateproject'><i class="fa-solid fa-pen"></i></Link></td>
                                 <td><button className='btn btn-danger'>Delete</button></td>

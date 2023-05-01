@@ -47,7 +47,7 @@ import ReportUser from './User/components/report/ReportUser';
 import AddCategory from './Admin/components/category/AddCategory';
 import ViewCategory from './Admin/components/category/ViewCategory';
 import UpdateCategory from './Admin/components/category/UpdateCategory';
-
+import ContactView from './Admin/components/contact/contact';
 function App() {
   return (
     <Router>
@@ -88,6 +88,8 @@ function App() {
           <Route path='/admin/addcategory' element={<AddCategory/>}/>
           <Route path='/admin/viewcategory' element={<ViewCategory/>}/>
           <Route path='/admin/updatecategory' element={<UpdateCategory/>}/>
+          <Route path='/admin/viewcontact' element={<ContactView/>}/>
+
         </Route>
         <Route path='/user' element={<Master/>}>
           <Route path='/user' element={<UserHome/>}/>

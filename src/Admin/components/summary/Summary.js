@@ -8,7 +8,14 @@ export default function Summary(){
     return(
         <>
             <div className="container my-5 p-5">
-                <div className="row">
+                <div className='row'>
+                    <Status workload="30%" team="Designer"/>
+                    <Status workload="35%" team="Developer"/>
+                    <Status workload="15%" team="Testing"/>
+                    <Status workload="20%" team="Maintenance"/>
+
+                </div>
+                <div className="row mt-2">
                     <Team role="Manager" num="10"/>
                     <Team role="Developer" num="12"/>
                     <Team role="Quality Assurance Engg" num="08"/>   
@@ -30,13 +37,7 @@ export default function Summary(){
 
 
                 </div>
-                <div className='row'>
-                    <Status workload="30%" team="Designer"/>
-                    <Status workload="35%" team="Developer"/>
-                    <Status workload="15%" team="Testing"/>
-                    <Status workload="20%" team="Maintenance"/>
-
-                </div>
+                
             </div>
         </>
     )

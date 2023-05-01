@@ -36,7 +36,10 @@ export default function Enquiry(){
     ]
     return(
         <>
-            <div className="container my-5 py-5 text-end h2">
+            <div className="container my-5 py-5 text-center ">
+                <h1>Enquiries from Employees</h1>
+            </div>
+            <div className="container  text-end h2">
                 <input className='border border-light' type='search'></input>
                 <Link >Filter<i className="fa-solid fa-filter "></i></Link>
                 

@@ -2,8 +2,8 @@ import {Link} from 'react-router-dom';
 export default function TaskView(){
     const tasks=[
         {
-            id:'12345',
-            empId:'EmpCog324',
+            name:'Routing',
+            empId:'Karam',
             description:'Task is to implement the Floydd Warshall Algorithm on the network given',
             category:'Web Development',
             deadline:'22-10-22',
@@ -12,8 +12,8 @@ export default function TaskView(){
             
         },
         {
-            id:'62345',
-            empId:'EmpCog5624',
+            name:'Routing',
+            empId:'Murli',
             description:'Task is to implement the Dijkastras algorithm  on the network given',
             category:'Networking',
             deadline:'13-07-23',
@@ -21,8 +21,8 @@ export default function TaskView(){
             progress: '60'
         },
         {
-            id:'467845',
-            empId:'EmpCog8364',
+            name:'Algorithm',
+            empId:'Neeru',
             description:'Implementing  Regression technique',
             category:'Machine Learning',
             deadline:'17-01-23',
@@ -30,8 +30,8 @@ export default function TaskView(){
             progress: '50'
         },
         {
-            id:'326889',
-            empId:'EmpCog364',
+            name:'Stats',
+            empId:'Mitali',
             description:'Implementing statistics on the records',
             category:'Data Analyst',
             deadline:'07-11-22',
@@ -39,7 +39,7 @@ export default function TaskView(){
             progress: '70'
         },
         {
-            id:'548384',
+            name:'Algorithm',
             empId:'EmpCog475',
             description:'Implementing  Regression technique',
             category:'Machine Learning',
@@ -48,8 +48,8 @@ export default function TaskView(){
             progress: '60'
         },
         {
-            id:'467845',
-            empId:'EmpCog3456',
+            name:'Routing',
+            empId:'Ram',
             description:'Implement routes in backend',
             category:'Web Development',
             deadline:'27-04-23',
@@ -77,7 +77,7 @@ export default function TaskView(){
                     <thead className='text-primary'>
                         <tr>
                             <td>Sr No</td>
-                            <td>Task Id</td>
+                            <td>Task Name</td>
                             <td>Assigned to</td>
                             <td>Description</td>
                             <td>Category</td>
@@ -94,7 +94,7 @@ export default function TaskView(){
                             <tbody key={index}>
                             <tr>
                                 <td>{index+1}</td>
-                                <td>{element.id}</td>
+                                <td>{element.name}</td>
                                 <td>{element.empId}</td>
                                 <td>{element.description}</td>
                                 <td>{element.category}</td>

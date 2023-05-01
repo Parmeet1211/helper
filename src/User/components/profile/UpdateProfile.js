@@ -1,4 +1,10 @@
-export default function UpdateProfile(){
+import { useState } from "react"
+
+export default function UpdateProfile(){ 
+    
+    const [name,setName]=useState("")
+    const [phone,setPhone]=useState("")
+    const [address,setAddress]=useState("")
     return(
         <>
             <div className="container my-5 py-5">
@@ -9,7 +15,11 @@ export default function UpdateProfile(){
                                 <div className="row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputEmail4">Name</label>
-                                        <input type="text" className="form-control" value='Radhe Shaym' />
+                                        <input type="text" className="form-control" value={name} onChange={
+                                            (e)=>{
+                                                setName(e.target.value)
+                                            }
+                                        } />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputPassword4">Phone No</label>

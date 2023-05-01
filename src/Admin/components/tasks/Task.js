@@ -9,7 +9,7 @@ export default function Task(){
         <>
             <div className="container my-5 py-5">
                 <div className="row">
-                    <div className="col-md-4 mb-3 mb-sm-0">
+                    <div className="col-md-6 mb-3 mb-sm-0">
                         <Link to='/admin/taskview'>
                             <div className="card mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                                 <div className="card-body">
@@ -19,7 +19,7 @@ export default function Task(){
                         </Link>
                     </div>
                     
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <Link to='/admin/addtask'>
                         <div className="card  mb-3 text-dark" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
@@ -29,7 +29,7 @@ export default function Task(){
                         </Link>
                     </div>
 
-                    <div className="col-md-4">
+                    {/* <div className="col-md-4">
                         <Link to='/admin/assigntask'>
                         <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-body">
@@ -37,7 +37,7 @@ export default function Task(){
                             </div>
                         </div>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='row my-5'>
                     

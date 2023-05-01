@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Reply(){
+    const [enquiry,setEnquiry]=useState("5649")
+    const [email,setEmail]=useState("emp123@gmail.com")
+    const [description,setDescription]=useState("")
     return(
         <>
             <div className="container my-5 py-5">
@@ -20,16 +24,20 @@ export default function Reply(){
                                 <div className="row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputEmail4">Enquiry No</label>
-                                        <input type="text" className="form-control" value='3653' />
+                                        <input type="text" className="form-control" value={enquiry} />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputPassword4">Employee Email</label>
-                                        <input type="text" className="form-control" id="inputPassword4"value='emp3745'/>
+                                        <input type="text" className="form-control" id="inputPassword4"value={email}/>
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="inputAddress">Description</label>
-                                    <textarea  className="form-control" id="inputAddress" placeholder="Description"></textarea>
+                                    <textarea  className="form-control" id="inputAddress" placeholder="Description" value={description} onChange={
+                                        (e)=>{
+                                            setDescription(e.target.value)
+                                        }
+                                    }></textarea>
                                 </div>
                                 <button type="submit" className="btn btn-primary my-3">Reply</button>
                             </form>  

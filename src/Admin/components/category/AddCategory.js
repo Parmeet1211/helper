@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 export default function AddCategory(){
+    const [categoryName,setCategoryName]=useState("")
+    const [description,setDescription]=useState("")
     return(
         <>
             <div className="container my-5 py-5">
@@ -8,11 +12,19 @@ export default function AddCategory(){
                         
                         <div className="form-group">
                             <label htmlFor="inputAddress">Category</label>
-                            <input type='text'  className="form-control" id="inputAddress" placeholder=""/>
+                            <input type='text'  className="form-control" id="inputAddress" placeholder="" value={categoryName} onChange={
+                                (e)=>{
+                                    setCategoryName(e.target.value)
+                                }
+                            }/>
                         </div>
                         <div className="form-group mt-3">
                             <label>Description</label>
-                            <textarea className="form-control"></textarea>
+                            <textarea className="form-control" value={description} onChange={
+                                (e)=>{
+                                    setDescription(e.target.value)
+                                }
+                            }></textarea>
                         </div>
                         <div className="form-group">
                             <div className="form-check">
