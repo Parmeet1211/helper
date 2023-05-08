@@ -1,13 +1,46 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import ApiServices from "../../../apiservice/ApiServices"
 export default function AddProject(){
-    const [projectId,setProjectId]=useState("")
+    const [categoryId,setCategoryId]=useState("")
     const [projectName,setProjectName]=useState("")
     const [description,setDescription]=useState("")
-    const [projectLeader,setProjectLeader]=useState("")
-    const [projectType,setProjectType]=useState("")
+    const [projectLeader,setProjectLeader]=useState()
+    // console.log(setProjectLeader)
+    // console.log(projectLeader)
+    // const [projectType,setProjectType]=useState("")
     const [lastDate,setLastDate]=useState("")
-    const category=['Android','Web Development','Networking','DevOps','Machine Learning','Cloud']
+    const [category,setCategory]=useState([{}])
+    const [employee,setEmployee]=useState([{}])
+    useEffect(
+        ()=>{
+            ApiServices.getCategory().then(
+                x=>{
+                    // console.log(x)
+                    setCategory(x.data.data)
+                }
+            )
+            ApiServices.getEmployee().then(
+                x=>{
+                    // console.log(x)
+                    setEmployee(x.data.data)
+                }
+            )
+        },[1]
+    )
+    const formHandler = (e) =>{
+        e.preventDefault()
+        let data = {
+            project_name : projectName,
+            description :description,
+            categoryId : categoryId,
+            lastDate : lastDate,
+            iscompleted :false,
+            project_leader : projectLeader
+        }
+        console.log(data)
+        // ApiServices.addProject()
+    }
     return(
         <>
             <div className="container my-5 py-5">
@@ -19,7 +52,7 @@ export default function AddProject(){
                 </div>
                 <div className="card text-bg-light my-5 mb-3">
                     <div className="card-body">
-                    <form>
+                    <form onSubmit={formHandler}>
                         <div className="row">
                             {/* <div className="form-group col-md-6">
                                 <label htmlFor="inputEmail4" >Project Id</label>
@@ -56,23 +89,30 @@ export default function AddProject(){
                         <div className="row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputCity">Project Leader</label>
-                                <input type="text" className="form-control" id="inputCity"
-                                value={projectLeader} onChange={
-                                    (e)=>{
-                                        setProjectLeader(e.target.value)
-                                    }
-                                }/>
+                                <select className="form-select" value={projectLeader} onChange={(e)=>
+                                {
+                                    console.log(e.target.value)
+                                    setProjectLeader(e.target.value)}}>
+                                        <option>Select</option>
+                                    {employee.map((element,index)=>(
+                                        <option key={index} value={element._id}>{element.employee_name
+                                        }</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="form-group col-md-4">
                                 <label htmlFor="inputState">category</label>
                                 <select id="inputState" className="form-control"
-                                value={projectType} onChange={
+                                value={categoryId} onChange={
                                     (e)=>{
-                                        setProjectType(e.target.value)
+                                        setCategoryId(e.target.value)
                                     }
                                 }>
+                                    <option>Select</option>
+
                                     {category.map((element,index)=>(
-                                        <option key={index}>{element}</option>
+                                        <option key={index}value={element._id}>{element.category_name
+                                        }</option>
                                     ))}
                                 </select>
                             </div>

@@ -48,6 +48,9 @@ import AddCategory from './Admin/components/category/AddCategory';
 import ViewCategory from './Admin/components/category/ViewCategory';
 import UpdateCategory from './Admin/components/category/UpdateCategory';
 import ContactView from './Admin/components/contact/contact';
+import Changepassword from './User/components/changepassword/Changepassword';
+
+
 function App() {
   return (
     <Router>
@@ -103,6 +106,7 @@ function App() {
           <Route path='/user/teams' element={<UserTeam/>}/>
           <Route path='/user/projects' element={<UserProject/>}/>
           <Route path='/user/reportuser' element={<ReportUser/>}/>
+          <Route path='/user/changepassword' element={<Changepassword/>}/>
         </Route>
       </Routes>
     </Router>

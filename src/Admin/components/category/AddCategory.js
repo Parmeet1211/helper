@@ -1,14 +1,38 @@
 import { useState } from "react"
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+import ApiServices from "../../../apiservice/ApiServices";
+
 
 export default function AddCategory(){
     const [categoryName,setCategoryName]=useState("")
     const [description,setDescription]=useState("")
+
+    const formHandler = (e)=>{
+        e.preventDefault()
+        let data = {
+            category_name : categoryName,
+            description :description
+        }
+        ApiServices.addCategory(data).then(
+            x=>{
+                if(x.data.success){
+                    toast.success(x.data.msg)
+                }
+                else{
+                    toast.error(x.data.msg)
+                }
+            }
+        )
+
+    }
+
     return(
         <>
             <div className="container my-5 py-5">
             <div className="card text-bg-light my-5 mb-3">
                     <div className="card-body">
-                    <form>
+                    <form onSubmit={formHandler}>
                         
                         <div className="form-group">
                             <label htmlFor="inputAddress">Category</label>
@@ -39,6 +63,7 @@ export default function AddCategory(){
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     )
 }

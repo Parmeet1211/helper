@@ -1,39 +1,37 @@
+import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
+import ApiServices from '../../../apiservice/ApiServices'
+import axios from 'axios'
 export default function ViewCategory(){
-    const Category=[
-        {
-            name : 'Web Development',
-            description : 'It is fullstack development'
-        },
-        {
-            name : 'Java',
-            description : 'It is fullstack development'
-        },
-        {
-            name : 'Networking',
-            description : 'It is fullstack development'
-        },
-        {
-            name : 'Machine Learning',
-            description : 'It is fullstack development'
-        },
-        {
-            name : 'Python',
-            description : 'It is fullstack development'
-        },
-        {
-            name : 'Android Development',
-            description : 'It is fullstack development'
-        }
-
-    ]
+    const [categoryName,setCategoryName] = useState("")
+    const [category,setCategory] = useState([{}])
+    
+    useEffect(
+        ()=>{
+            let catdata = {
+             category_name : categoryName
+            }
+            // console.log(catdata)
+            ApiServices.getCategory().then(
+                (x)=>{
+                    console.log(x)
+                    // console.log(x.data.data[0])
+                    setCategory(x.data.data)
+                }
+            )
+        },[category]
+    )
     return(
         <>
             <div className="container my-5 py-5 text-end h2">
                 <div className='row'>
                     <div className='col-6'>
-                        <input className='border border-light' type='search'></input>
-                        <Link >Filter<i className="fa-solid fa-filter "></i></Link>
+                        <input className='border border-light' type='text' value={categoryName} onChange={
+                            (e)=>{
+                                setCategoryName(e.target.value)
+                            }
+                        }></input>
+                        Filter<i className="fa-solid fa-filter"></i>
                     </div>
                 </div>
             </div>
@@ -50,17 +48,17 @@ export default function ViewCategory(){
                         </tr>
                     </thead>
                     
-                        {Category.map((element,index)=>(
+                        {category?.map((element,index)=>(
                             <tbody key={index}>
                             <tr>
                                 <td>{index+1}</td>
-                                <td>{element.name}</td>
-                                <td>{element.description}</td>
-                                <td><Link to='/admin/updatecategory'><i class="fa-solid fa-pen"></i></Link></td>
+                                <td>{element?.category_name}</td>
+                                <td>{element?.description}</td>
+                                <td><Link to='/admin/updatecategory'><button className='btn btn-success'>Update</button></Link></td>
                                 <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>
                             </tbody>
-                        ))}
+                        ))} 
                     
                 </table> 
             </div>

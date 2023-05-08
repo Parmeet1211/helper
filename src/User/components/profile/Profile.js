@@ -10,6 +10,9 @@ export default function Profile(){
                         <div className="mt-5 text-start">
                             <Link to='/user/update'><span className="btn btn-primary">Update Profile</span></Link>
                         </div>
+                        <div className="mt-5 text-start">
+                            <Link to='/user/changepassword'><span className="btn btn-primary">Change Password</span></Link>
+                        </div>
                     </div>
                     <div className="col-md-7 mt-3">
                         <h1 className="fw-bolder">Radhe Shaym</h1>
