@@ -54,7 +54,7 @@ export default function ViewCategory(){
                                 <td>{index+1}</td>
                                 <td>{element?.category_name}</td>
                                 <td>{element?.description}</td>
-                                <td><Link to='/admin/updatecategory'><button className='btn btn-success'>Update</button></Link></td>
+                                <td><Link to={'/admin/updatecategory/'+`${element?._id}`}><button className='btn btn-success'>Update</button></Link></td>
                                 <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>
                             </tbody>

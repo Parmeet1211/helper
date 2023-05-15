@@ -1,42 +1,18 @@
+import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
+import ApiServices from '../../../apiservice/ApiServices';
 export default function ViewEmployee(){
-    const projects=[
-        {
-            id:'12345',
-            name:'Shaym',
-            role:'ProjectLeader'
-        },
-        {
-            id:'12342',
-            name:'Radha',
-            role:'Developer'
-        },
-        {
-            id:'62345',
-            name:'Sukhpreet',
-            role:'Designer'
-        },
-        {
-            id:'346721',
-            name:'Raman Kumar ',
-            role:'ProjectLeader'
-        },
-        {
-            id:'457783',
-            name:'Dhruv Sharma',
-            role:'Developer'
-        },
-        {
-            id:'72345',
-            name:'Ramesh',
-            role:'ProjectLeader'
-        },
-        {
-            id:'187345',
-            name:'Shardha Thakur',
-            role:'Technical Lead'
+    const [employee ,setEmployee] = useState([{}])
+    useEffect(
+        ()=>{
+            ApiServices.getEmployee({}).then(
+                x=>{
+                    // console.log(x)
+                    setEmployee(x.data.data)
+                }
+            )
         }
-    ]
+    )
     return(
         <>
             <div className="container my-5 py-5 text-end h2">
@@ -61,25 +37,24 @@ export default function ViewEmployee(){
                             <td>Employee Id</td>
                             <td>Employee Name</td>
                             <td>Role</td>
-                            <td>View</td>
+                            {/* <td>View</td> */}
                             <td>Update</td>
                             <td>Delete</td>
                         </tr>
                     </thead>
                     
-                        {projects.map((element,index)=>(
-                            <tbody key={index}>
-                            <tr>
+                    <tbody>
+                        {employee?.map((element,index)=>(
+                            <tr key={index}>
                                 <td>{index+1}</td>
-                                <td>{element.id}</td>
-                                <td>{element.name}</td>
-                                <td>{element.role}</td>
-                                <td><Link to='/admin/view'><i className="fa-solid fa-eye"></i></Link></td>
-                                <td><Link to='/admin/updateemployee'><i class="fa-solid fa-pen"></i></Link></td>
-                                <td><button className='btn btn-danger'>Delete</button></td>
+                                <td>{element?.employee_id}</td>
+                                <td>{element?.employee_name}</td>
+                                <td>{element?.role}</td>
+                                <td><Link to={'/admin/updateemployee/'+`${element._id}`}><button className='btn btn-success'>Update</button></Link></td>
+                                <td><Link><button className='btn btn-danger'>Delete</button></Link></td>
                             </tr>
-                            </tbody>
                         ))}
+                    </tbody>
                     
                 </table> 
             </div>

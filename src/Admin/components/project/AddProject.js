@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import ApiServices from "../../../apiservice/ApiServices"
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+
+
 export default function AddProject(){
+    const navigate = useNavigate()
     const [categoryId,setCategoryId]=useState("")
     const [projectName,setProjectName]=useState("")
     const [description,setDescription]=useState("")
@@ -38,8 +43,24 @@ export default function AddProject(){
             iscompleted :false,
             project_leader : projectLeader
         }
-        console.log(data)
-        // ApiServices.addProject()
+        // console.log(data)
+        ApiServices.addProject(data).then(
+            x=>{
+                // console.log(x)
+                if(x.data.success){
+                    toast.success(x.data.msg)
+                    setTimeout(
+                        ()=>{
+                            navigate('/admin/projectview')
+                        },3000
+                    
+                    )
+                }
+                else{
+                    toast.error(x.data.msg)
+                }
+            }
+        )
     }
     return(
         <>
@@ -94,8 +115,8 @@ export default function AddProject(){
                                     console.log(e.target.value)
                                     setProjectLeader(e.target.value)}}>
                                         <option>Select</option>
-                                    {employee.map((element,index)=>(
-                                        <option key={index} value={element._id}>{element.employee_name
+                                    {employee?.map((element,index)=>(
+                                        <option key={index} value={element?._id}>{element?.employee_name
                                         }</option>
                                     ))}
                                 </select>
@@ -110,8 +131,8 @@ export default function AddProject(){
                                 }>
                                     <option>Select</option>
 
-                                    {category.map((element,index)=>(
-                                        <option key={index}value={element._id}>{element.category_name
+                                    {category?.map((element,index)=>(
+                                        <option key={index}value={element?._id}>{element.category_name
                                         }</option>
                                     ))}
                                 </select>
@@ -139,6 +160,7 @@ export default function AddProject(){
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     )
 }

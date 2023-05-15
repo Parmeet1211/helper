@@ -66,12 +66,12 @@ function App() {
           <Route path='/admin' element={<Summary/>}/>
           <Route path='/admin/project' element={<Project/>}/>
           <Route path='/admin/projectview' element={<ProjectView/>}/>
-          <Route path='/admin/updateproject' element={<UpdateProject/>}/>
+          <Route path='/admin/updateproject/:_id' element={<UpdateProject/>}/>
           <Route path='/admin/viewsingle' element={<ViewSingle/>}/>
           <Route path='/admin/addproject' element={<AddProject/>} /> 
           <Route path='/admin/task' element={<Task/>}/>
           <Route path='/admin/taskview' element={<TaskView/>}/>
-          <Route path='/admin/updatetask' element={<UpdateTask/>}/>
+          <Route path='/admin/updatetask/:_id' element={<UpdateTask/>}/>
           <Route path='/admin/singletask' element={<SingleTask/>}/>
           <Route path='/admin/addtask' element={<AddTask/>}/>
           <Route path='/admin/assigntask' element={<AssignTask/>}/>
@@ -79,7 +79,7 @@ function App() {
           <Route path='/admin/addemployee' element={<AddEmployee/>}/>
           {/* <Route path='employee/addemployee' element={<AddEmployee/>}/> */}
           <Route path='/admin/viewemployee' element={<ViewEmployee/>}/>
-          <Route path='/admin/updateemployee' element={<UpdateEmployee/>}/>
+          <Route path='/admin/updateemployee/:_id' element={<UpdateEmployee/>}/>
           <Route path='/admin/view' element={<View/>}/>
           <Route path='/admin/report' element={<Report/>}/>
           <Route path='/admin/board' element={<Board/>}/>
@@ -90,7 +90,7 @@ function App() {
           <Route path='/admin/details' element={<Detail/>}/>
           <Route path='/admin/addcategory' element={<AddCategory/>}/>
           <Route path='/admin/viewcategory' element={<ViewCategory/>}/>
-          <Route path='/admin/updatecategory' element={<UpdateCategory/>}/>
+          <Route path='/admin/updatecategory/:_id' element={<UpdateCategory/>}/>
           <Route path='/admin/viewcontact' element={<ContactView/>}/>
 
         </Route>

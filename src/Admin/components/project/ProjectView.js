@@ -1,65 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
+import ApiServices from '../../../apiservice/ApiServices'
 export default function ProjectView(){
-    
-    const projects=[
+    const[projects,setProjects]=useState([{}])
+    const changeDate = (date)=>
+    {
+        if(date)
         {
-            id:'12345',
-            name:'ECommerce',
-            manager:'Manish',
-            deadline:'22-10-22',
-            status:'running',
-            type : 'Android'
-        },
-        {
-            id:'12342',
-            name:'Image Detection',
-            manager:'Shardha Kumari',
-            deadline:'05-04-23',
-            status:'completed',
-            type : 'Machine Learning'
-        },
-        {
-            id:'62345',
-            name:'Noise Detection',
-            manager:'Ram',
-            deadline:'18-07-24',
-            status:'Upcoming',
-            type : 'Machine Learning'
-        },
-        {
-            id:'346721',
-            name:'News Application',
-            manager:'Jyotica Sharma',
-            deadline:'24-05-23',
-            status:'running',
-            type : 'Android'
-        },
-        {
-            id:'457783',
-            name:'Feeling Detection system',
-            manager:'Anushree Das',
-            deadline:'08-09-23',
-            status:'Upcoming',
-            type : 'Machine Learning'
-        },
-        {
-            id:'72345',
-            name:'ECommerce',
-            manager:'Ramesh Singh',
-            deadline:'27-10-22',
-            status:'completed',
-            type : 'Web Development'
-        },
-        {
-            id:'187345',
-            name:'School Management Application',
-            manager:'Vishwa',
-            deadline:'03-06-23',
-            status:'running',
-            type : 'Web Development'
+            return (date.split('T',1))
+
         }
-    ]
+    }
+    useEffect(
+        ()=>{
+            ApiServices.getProject({status : true}).then(
+                x=>{
+                    console.log(x)
+                    setProjects(x.data.data)
+                }
+            )
+        },[1]
+    )
+    
     return(
         <>
             <div className="container my-5 py-5 text-end h2">
@@ -81,28 +43,27 @@ export default function ProjectView(){
                     <thead className='text-primary'>
                         <tr>
                             <td>Sr No</td>
-                            <td>Project Id</td>
+                            {/* <td>Project Id</td> */}
                             <td>Project Name</td>
                             <td>Project Manager</td>
                             <td>Project Deadline</td>
                             <td>Type</td>
-                            <td>View</td>
+                            {/* <td>View</td> */}
                             <td>Update</td>
                             <td>Delete</td>
                         </tr>
                     </thead>
                     
-                        {projects.map((element,index)=>(
+                        {projects?.map((element,index)=>(
                             <tbody key={index}>
                             <tr>
                                 <td>{index+1}</td>
-                                <td>{element.id}</td>
-                                <td>{element.name}</td>
-                                <td>{element.manager}</td>
-                                <td>{element.deadline}</td>
-                                <td>{element.type}</td>
-                                <td><Link to='/admin/viewsingle'><i className="fa-solid fa-eye"></i></Link></td>
-                                <td><Link to='/admin/updateproject'><i class="fa-solid fa-pen"></i></Link></td>
+                                <td>{element?.project_name}</td>
+                                <td>{element?.project_leader?.employee_name}</td>
+                                <td>{changeDate(element?.lastDate)}</td>
+                                <td>{element.categoryId?.category_name}</td>
+                                {/* <td><Link to='/admin/viewsingle'><i className="fa-solid fa-eye"></i></Link></td> */}
+                                <td><Link to={'/admin/updateproject/'+`${element._id}`}><button className='btn btn-success' value={element._id}>Update</button></Link></td>
                                 <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>
                             </tbody>

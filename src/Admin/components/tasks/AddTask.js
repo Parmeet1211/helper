@@ -1,10 +1,13 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import ApiServices from "../../../apiservice/ApiServices";
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 export default function AddTask(){
-    const empName = ['Ram','Raju','Sandhya','Ayesha','Neeraj','Siddharth','Mayuri']
-    const Category = ['Web Development','Machine Learning','Android Application','Data Analytics','Networking','DevOps']
-    const project = ['ecommerce','face detection system','food delivery website','School management system']
+    const [empName , setEmpName] = useState([{}])
+    const [category ,setCategory] = useState([{}])
+    const [project, setProject] = useState([{}])
     const priority = ['medium','high','low']
 
     // usestates
@@ -15,7 +18,66 @@ export default function AddTask(){
     const [projectId,setProjectId]=useState("")
     const [taskCategory,setTaskCategory]=useState("")
     const [lastDate,setLastDate]=useState("")
+    const [isComplete,setIsComplete]=useState(false)
 
+    const navigate = useNavigate()
+
+
+
+    useEffect(
+        ()=>{
+            let data={}
+            ApiServices.getEmployee(data).then(
+                x=>{
+                    // console.log(x)
+                    setEmpName(x.data.data)
+                }
+            )
+
+            ApiServices.getCategory(data).then(
+                x=>{
+                    console.log(x)
+                    setCategory(x.data.data)
+                }
+            )
+
+            ApiServices.getProject(data).then(
+                x=>{
+                    // console.log(x)
+                    setProject(x.data.data)
+                }
+            )
+        },[1]
+    )
+
+
+    const formHandler = (e) =>{
+        e.preventDefault()
+        let data={
+            taskname : taskName,
+            employeeId : employee,
+            description : description,
+            priority : taskPriority,
+            projectId : projectId,
+            categoryId : taskCategory,
+            lastDate : lastDate
+        }
+
+        ApiServices.addtask(data).then(
+            x=>{
+                // console.log(x)
+                if(x.data.success){
+                    toast.success(x.data.msg)
+                    setTimeout(() => {
+                        navigate('/admin/taskview')
+                    },3000);
+                }
+                else{
+                    toast.error(x.data.msg)
+                }
+            }
+        )
+    }
     return(
         <>
             <div className="container my-5 py-5">
@@ -28,7 +90,7 @@ export default function AddTask(){
                 </div>
                 <div className="card text-bg-light my-5 mb-3">
                     <div className="card-body">
-                    <form>
+                    <form onSubmit={formHandler}>
                         <div className="row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputEmail4">Task Name</label>
@@ -48,11 +110,19 @@ export default function AddTask(){
                                     setEmployee(e.target.value)
                                    }
                                 }>
+                                    <option>Select</option>
                                     {empName.map((element,index)=>(
                                         
-                                        <option key={index+1}>{element}</option>
+                                        <option key={index+1} value={element._id}>{element.employee_name}</option>
                                     ))}
                                 </select>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="form-group col">
+                                <label htmlFor="inputEmail4">Is Completed</label>
+                                <input type="text" className="form-control"  value={isComplete}
+                                />
                             </div>
                         </div>
                         <div className="form-group">
@@ -75,9 +145,10 @@ export default function AddTask(){
                                         setTaskPriority(e.target.value)
                                     }
                                 }>
+                                    <option>Select</option>
                                     {priority.map((element,index)=>(
                                         
-                                        <option key={index+1}>{element}</option>
+                                        <option key={index+1} value={index+1}>{element}</option>
                                     ))}
                                 </select>
                             </div>
@@ -90,8 +161,9 @@ export default function AddTask(){
                                         setProjectId(e.target.value)
                                     }
                                 }>
+                                    <option>Select</option>
                                     {project.map((element,index)=>(
-                                        <option key={index}>{element}</option>
+                                        <option key={index}value={element._id}>{element.project_name}</option>
                                     ))}
                                 </select>
                             </div>
@@ -104,8 +176,10 @@ export default function AddTask(){
                                         setTaskCategory(e.target.value)
                                     }
                                 }>
-                                    {Category.map((element,index)=>(
-                                        <option key={index}>{element}</option>
+                                    <option>Select</option>
+                                    {category.map((element,index)=>(
+                                        <option key={index}value={element._id}>{element.category_name
+                                        }</option>
                                     ))}
                                 </select>
                             </div>
@@ -133,6 +207,7 @@ export default function AddTask(){
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     )
 }
