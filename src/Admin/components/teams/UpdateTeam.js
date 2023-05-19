@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import ApiServices from "../../../apiservice/ApiServices";
 import { ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
-export default function Team() {
+export default function UpdateTeam() {
     const teams = ['Designing', 'Development', 'Testing', 'Maintenance'];
     
     const [projectId,setProjectId] = useState("")
@@ -13,6 +13,8 @@ export default function Team() {
     const [project,setProject]=useState([{}])
     const [employee,setEmployee]=useState([{}])
     const navigate = useNavigate()
+    const param = useParams()
+    const _id = param._id
 
     useEffect(
         ()=>{
@@ -34,12 +36,13 @@ export default function Team() {
     const formHandler = (e) =>{
         e.preventDefault()
         let data={
+            _id : _id,
             teamType : team,
             projectId : projectId,
             empId : employeeId
         }
         // console.log(data)
-        ApiServices.addTeam(data).then(
+        ApiServices.updateTeams(data).then(
             x=>{
                 // console.log(x)
                 if(x.data.success){
@@ -59,13 +62,13 @@ export default function Team() {
             <div className="container my-5 py-5">
                 <div className="row my-3">
                     <div className="col-md-6 text-end">
-                        <h1>Add Team</h1>
+                        <h1>Update Team</h1>
                     </div>
                     <div className="col-md-6 text-end">
                         <Link to='/admin/teamview'><button className="btn btn-primary">View Teams</button></Link>
                     </div>
                 </div>
-                <div className="row my-3 py-5">.
+                <div className="row my-3 py-5">
                     <div className="col">
                         <div className="card my-5 mb-3">
                             <div className="card-body">
@@ -115,7 +118,7 @@ export default function Team() {
                                         </div>
                                     </div>
 
-                                    <button type="submit" className="btn btn-primary my-3">Create</button>
+                                    <button type="submit" className="btn btn-primary my-3">Update</button>
                                 </form>
                             </div>
                         </div>

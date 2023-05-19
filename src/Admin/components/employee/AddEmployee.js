@@ -46,7 +46,11 @@ export default function AddEmployee() {
     <>
       <div className="container my-5 py-5">
         <div className="row">
-          <div className="col text-end">
+          <div className='col-md-6 text-center'>
+            <h1>Add Employee</h1>
+          </div>
+        
+          <div className="col-md-6 text-end">
             <Link to="/admin/viewemployee">
               <button className="btn btn-warning">View</button>
             </Link>

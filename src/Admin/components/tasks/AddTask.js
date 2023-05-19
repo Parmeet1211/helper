@@ -82,7 +82,12 @@ export default function AddTask(){
         <>
             <div className="container my-5 py-5">
                 <div className="row">
-                    <div className="col text-end">
+                
+                    <div className='col-md-6 text-center'>
+                        <h1>Add Task</h1>
+                    </div>   
+                
+                    <div className="col-md-6 text-end">
                         <Link to='/admin/taskview'><button className="btn btn-warning">View</button>
                         </Link>
                     </div>

@@ -23,15 +23,10 @@ export default function ViewCategory(){
     )
     return(
         <>
-            <div className="container my-5 py-5 text-end h2">
+            <div className="container my-5 py-5  h2">
                 <div className='row'>
-                    <div className='col-6'>
-                        <input className='border border-light' type='text' value={categoryName} onChange={
-                            (e)=>{
-                                setCategoryName(e.target.value)
-                            }
-                        }></input>
-                        Filter<i className="fa-solid fa-filter"></i>
+                    <div className='col text-center'>
+                        <h1>View Category</h1>
                     </div>
                 </div>
             </div>
@@ -44,7 +39,7 @@ export default function ViewCategory(){
                             <td>Category</td>
                             <td>Description</td>
                             <td>Update</td>
-                            <td>Delete</td>
+                            {/* <td>Delete</td> */}
                         </tr>
                     </thead>
                     
@@ -55,7 +50,7 @@ export default function ViewCategory(){
                                 <td>{element?.category_name}</td>
                                 <td>{element?.description}</td>
                                 <td><Link to={'/admin/updatecategory/'+`${element?._id}`}><button className='btn btn-success'>Update</button></Link></td>
-                                <td><button className='btn btn-danger'>Delete</button></td>
+                                {/* <td><button className='btn btn-danger'>Delete</button></td> */}
                             </tr>
                             </tbody>
                         ))} 

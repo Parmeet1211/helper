@@ -17,9 +17,8 @@ export default function ViewEmployee(){
         <>
             <div className="container my-5 py-5 text-end h2">
                 <div className='row'>
-                    <div className='col-6'>
-                        <input className='border border-light' type='search'></input>
-                        <Link >Filter<i className="fa-solid fa-filter "></i></Link>
+                    <div className='col-6 text-center'>
+                        <h1>View Employee</h1>
                     </div>
                     <div className='col-6 text-end'>
                         <Link to='/admin/addemployee'>
@@ -39,7 +38,7 @@ export default function ViewEmployee(){
                             <td>Role</td>
                             {/* <td>View</td> */}
                             <td>Update</td>
-                            <td>Delete</td>
+                            {/* <td>Delete</td> */}
                         </tr>
                     </thead>
                     
@@ -51,7 +50,7 @@ export default function ViewEmployee(){
                                 <td>{element?.employee_name}</td>
                                 <td>{element?.role}</td>
                                 <td><Link to={'/admin/updateemployee/'+`${element._id}`}><button className='btn btn-success'>Update</button></Link></td>
-                                <td><Link><button className='btn btn-danger'>Delete</button></Link></td>
+                                {/* <td><Link><button className='btn btn-danger'>Delete</button></Link></td> */}
                             </tr>
                         ))}
                     </tbody>

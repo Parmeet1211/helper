@@ -1,115 +1,58 @@
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import ApiServices from "../../../apiservice/ApiServices"
 export default function TeamView(){
-    const team=[
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        },
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        },
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        },
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        },
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        },
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        },
-        {
-            name : "ECommerce",
-            id : "r54e55",
-            designer : 10,
-            developer : 12,
-            tester : 6,
-            maintenance : 11
-        }
-    ]
+    const [team,setTeam] = useState([{}])
+    useEffect(
+        ()=>{
+            ApiServices.getteams({}).then(
+                x=>{
+                    console.log(x)
+                    setTeam(x.data.data)
+                }
+            )
+        },[1]
+    )
     return(
         <>
-            <div className="container my-5 py-5">
-            <div className="row">
-                    <div  className="col text-end">
-                       <Link to='/admin/teams'><button className="btn btn-warning">Add</button></Link>
+            <div className="container my-5 py-5 text-end h2">
+                <div className='row'>
+                    <div className='col-6 text-center'>
+                        <h1>View Teams</h1>
                     </div>
+                    <div className='col-6'>
+                        <Link to='/admin/teams'><button className='btn btn-warning'>Add</button>
+                        </Link>
+                    </div>
+                </div>     
             </div>
-            <div className="row my-5">
-                    <h1 className="text-center fw-bolder" style={{ color: 'rgba(159,190,255)' }}>Teams</h1>
-                    {team.map((element,index)=>(
-                       <div className="col-md-6 col-lg-4  mt-5 pt-5" key={index}>
-                        <Link to='/admin/details'>
-                       <div className="card text-dark">
-                           <div className="card-header">
-                               <h5>Project Name : {element.name}</h5>
-                               <h6>Project Id : {element.id}</h6>
-                           </div>
-                           <div className="card-body">
-                               <div className="row">
-                                   <div className="col-sm-6  card mt-2 " style={{backgroundColor: "bisque"}}>
-                                       <div className="card-body">
-                                           <h6>Designer</h6>
-                                           <h5>{element.designer}</h5>
-                                       </div>
-                                   </div>
-
-                                   <div className="col-sm-6  card  mt-2" style={{backgroundColor:"rgba(159,190,255)"}}>
-                                       <div className="card-body">
-                                           <h6>Developer</h6>
-                                           <h5>{element.developer}</h5>
-                                       </div>
-                                   </div>
-                                   <div className="col-sm-6  card mt-2 " style={{backgroundColor:'rgba(159,190,255)'}}>
-                                       <div className="card-body">
-                                           <h6>Tester</h6>
-                                           <h5>{element.tester}</h5>
-                                       </div>
-                                   </div>
-                                   <div className="col-sm-6  card mt-2 " style={{backgroundColor:'bisque'}}>
-                                       <div className="card-body">
-                                           <h6>Maintenance</h6>
-                                           <h5>{element.maintenance}</h5>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       </Link>
-                    </div> 
-                    ))}
-                </div>
+            <div className="container table-responsive">
+               <table className="table table-hover ">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Team</th>
+                            <th>Project</th>
+                            <th>Employee</th>
+                            <th>Employee Email</th>
+                            <th>Employee Role</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {team.map((element,index)=>(
+                            <tr key={index}>
+                                <td>{index+1}</td>
+                                <td>{element?.teamType == 1?'Designer':element?.teamType == 2 ? 'Developer':element?.teamType == 3?'Tester' : 'Maintenance'}</td>
+                                <td>{element?.projectId?.project_name}</td>
+                                <td>{element?.empId?.employee_name}</td>
+                                <td>{element?.empId?.email}</td>
+                                <td>{element?.empId?.role}</td>
+                                <td><Link to={'/admin/updateteam/'+`${element._id}`}><button className="btn btn-success">Update</button></Link></td>
+                            </tr>
+                        ))}
+                    </tbody>
+               </table>
             </div>
         </>
     )

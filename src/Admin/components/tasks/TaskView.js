@@ -26,9 +26,8 @@ export default function TaskView(){
         <>
             <div className="container my-5 py-5 text-end h2">
                 <div className='row'>
-                    <div className='col-6'>
-                        <input className='border border-light' type='search'></input>
-                        <Link >Filter<i className="fa-solid fa-filter "></i></Link>
+                    <div className='col-6 text-center'>
+                        <h1>View Tasks</h1>
                     </div>
                     <div className='col-6'>
                         <Link to='/admin/addtask'><button className='btn btn-warning'>Add</button>

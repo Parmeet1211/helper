@@ -49,6 +49,7 @@ import ViewCategory from './Admin/components/category/ViewCategory';
 import UpdateCategory from './Admin/components/category/UpdateCategory';
 import ContactView from './Admin/components/contact/contact';
 import Changepassword from './User/components/changepassword/Changepassword';
+import UpdateTeam from './Admin/components/teams/UpdateTeam';
 
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
           <Route path='/admin/report' element={<Report/>}/>
           <Route path='/admin/board' element={<Board/>}/>
           <Route path='/admin/enquiry' element={<Enquiry/>}/>
-          <Route path='/admin/reply' element={<Reply/>}/>
+          <Route path='/admin/reply/:_id' element={<Reply/>}/>
           <Route path='/admin/teams' element={<Team/>}/>
           <Route path='/admin/teamview' element={<TeamView/>}/>
           <Route path='/admin/details' element={<Detail/>}/>
@@ -92,7 +93,7 @@ function App() {
           <Route path='/admin/viewcategory' element={<ViewCategory/>}/>
           <Route path='/admin/updatecategory/:_id' element={<UpdateCategory/>}/>
           <Route path='/admin/viewcontact' element={<ContactView/>}/>
-
+          <Route path='/admin/updateteam/:_id' element={<UpdateTeam/>} />
         </Route>
         <Route path='/user' element={<Master/>}>
           <Route path='/user' element={<UserHome/>}/>

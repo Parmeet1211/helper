@@ -15,7 +15,7 @@ export default function ProjectView(){
         ()=>{
             ApiServices.getProject({status : true}).then(
                 x=>{
-                    console.log(x)
+                    // console.log(x)
                     setProjects(x.data.data)
                 }
             )
@@ -26,9 +26,8 @@ export default function ProjectView(){
         <>
             <div className="container my-5 py-5 text-end h2">
                 <div className='row'>
-                    <div className='col-6'>
-                        <input className='border border-light ' type='search'></input>
-                        <Link >Filter<i className="fa-solid fa-filter "></i></Link>
+                    <div className='col-6 text-center'>
+                        <h1>All Projects</h1>
                     </div>
                     <div className='col-6'>
                         <Link to='/admin/addproject'>
@@ -50,7 +49,7 @@ export default function ProjectView(){
                             <td>Type</td>
                             {/* <td>View</td> */}
                             <td>Update</td>
-                            <td>Delete</td>
+                            {/* <td>Delete</td> */}
                         </tr>
                     </thead>
                     
@@ -64,7 +63,7 @@ export default function ProjectView(){
                                 <td>{element.categoryId?.category_name}</td>
                                 {/* <td><Link to='/admin/viewsingle'><i className="fa-solid fa-eye"></i></Link></td> */}
                                 <td><Link to={'/admin/updateproject/'+`${element._id}`}><button className='btn btn-success' value={element._id}>Update</button></Link></td>
-                                <td><button className='btn btn-danger'>Delete</button></td>
+                                {/* <td><button className='btn btn-danger'>Delete</button></td> */}
                             </tr>
                             </tbody>
                         ))}

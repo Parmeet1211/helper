@@ -18,6 +18,8 @@ export default function Summary(){
     const [designer , setDesigner] = useState()
     const [tester , setTester] = useState()
     const [maintenance , setMaintenance] = useState()
+    const [completedTasks,setCompletedTasks] = useState()
+    const [pendingTasks,setPendingTasks] = useState()
     useEffect(
         ()=>{
             let data = {}
@@ -34,6 +36,8 @@ export default function Summary(){
                     setDesigner(x.data.totaldesigner)
                     setTester(x.data.totaltester)
                     setMaintenance(x.data.totalmaintenance)
+                    setCompletedTasks(x.data.completedtasks)
+                    setPendingTasks(x.data.pendingtasks)
                 }
             )
         },[1]
@@ -54,8 +58,8 @@ export default function Summary(){
                     <Team role="Quality Assurance Engg" num="08"/>   
                 </div> */}
                 <div className="row">
-                        <Progress status='Completed' num='37'/>
-                        <Progress status='Pending' num='23'/>    
+                        <Progress status='Completed' num={completedTasks}/>
+                        <Progress status='Pending' num={pendingTasks}/>    
                 </div>  
                 <div className="row">
                     <Priority priorities='High' num={highpriority}/>

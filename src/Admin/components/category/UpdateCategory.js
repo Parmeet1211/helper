@@ -59,6 +59,13 @@ export default function UpdateCategory(){
     return(
         <>
             <div className="container my-5 py-5">
+            <div className="container h2">
+                <div className='row'>
+                    <div className='col text-center'>
+                        <h1>Update Category</h1>
+                    </div>
+                </div>
+            </div>
             <div className="card text-bg-light my-5 mb-3">
                     <div className="card-body">
                     <form onSubmit={formHandler}>

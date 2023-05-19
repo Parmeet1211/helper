@@ -18,16 +18,30 @@ export default function SignIn(){
         console.log(data)
         Apiservices.signIn(data).then(
             x =>{
-                // console.log(x)
+                console.log(x)
                 if(x.data.success){
                     toast.success(x.data.msg)
                     // console.log(x.data.msg)
                     sessionStorage.setItem("token",x.data.token)
-                    setTimeout(
+                    sessionStorage.setItem("_id",x.data._id)
+                    if(x.data.userType == 1)
+                    {
+                        setTimeout(
                         ()=>{
                             navigate('/admin')
                         },3000
-                    )
+                        )
+                    }
+                    else if(x.data.userType == 2){
+                        setTimeout(
+                            ()=>{
+                                navigate('/user')
+                            },3000
+                        )
+                    }
+                    else{
+                        toast.error('Not valid user')
+                    }
                 }
                 else{
                     toast.error(x.data.msg)
@@ -84,9 +98,9 @@ export default function SignIn(){
 
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                     <button type="submit" className="btn btn-primary btn-lg">Sign In</button>
-                                                    <Link to='/user'>
+                                                    {/* <Link to='/user'>
                                                     <button type="button" className="btn ms-2 btn-primary btn-lg">Sign In User</button>
-                                                    </Link>
+                                                    </Link> */}
                                                 </div>
 
                                             </form>

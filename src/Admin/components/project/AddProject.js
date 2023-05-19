@@ -66,7 +66,10 @@ export default function AddProject(){
         <>
             <div className="container my-5 py-5">
                 <div className="row">
-                    <div className="col text-end">
+                    <div className="col-md-6 text-center">
+                        <h1>Add Project</h1>
+                    </div>
+                    <div className="col-md-6 text-end">
                         <Link to='/admin/projectview'><button className="btn btn-warning">View</button>
                         </Link>
                     </div>

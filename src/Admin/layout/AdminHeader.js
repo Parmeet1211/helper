@@ -25,9 +25,9 @@ export default function AdminHeader(){
                             Project
                         </button>
                         <ul className="dropdown-menu">
-                            <li>
+                            {/* <li>
                                 <Link to='/admin/project'>Project</Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to='/admin/projectview'>Current Projects</Link>
                             </li>
@@ -44,9 +44,9 @@ export default function AdminHeader(){
                              Tasks
                         </button>
                         <ul className="dropdown-menu">
-                            <li>
+                            {/* <li>
                                 <Link to='/admin/task'>Tasks</Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to='/admin/taskview'>Current Tasks</Link>
                             </li>

@@ -127,6 +127,73 @@ class ApiServices {
 
     return axios.post(BASE_URL+'admin/addteam',qs.stringify(data),{headers : header1})
   }
+  singleProject(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+     };
+     return axios.post(BASE_URL+'admin/singleproject',qs.stringify(data),{headers : header1})
+  }
+  updateProject(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+     };
+     return axios.post(BASE_URL+'admin/updateproject',qs.stringify(data),{headers : header1})
+  }
+  getnewtasks(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/getnewTasks',qs.stringify(data),{headers : header1})
+
+  }
+  getrunningtasks(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/getrunningTasks',qs.stringify(data),{headers : header1})
+
+  }
+  getcompletetasks(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/getcompleteTasks',qs.stringify(data),{headers : header1})
+
+  }
+  getcontactus(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/allcontact',qs.stringify(data),{headers : header1})
+
+  }
+  getenquiry(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/allenquiry',qs.stringify(data),{headers : header1})
+
+  }
+  replyenquiry(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/reply',qs.stringify(data),{headers : header1})
+
+  }
+  getteams(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/allteam',qs.stringify(data),{headers : header1})
+  }
+  updateTeams(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/updateteam',qs.stringify(data),{headers : header1})
+
+  }
 }
 
 export default new ApiServices();

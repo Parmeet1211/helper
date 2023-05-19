@@ -76,6 +76,13 @@ export default function UpdateEmployee(){
     return(
         <>
         <div className="container my-5 py-5">
+        
+                <div className='row'>
+                    <div className='col text-center'>
+                        <h1>Update Employee</h1>
+                    </div>   
+                </div>
+            
             <div className="card text-bg-light my-5 py-5 mb-3">
                     <div className="card-body">
                     <form onSubmit={handleForm}>
