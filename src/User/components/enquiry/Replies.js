@@ -1,54 +1,34 @@
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import ApiServices from "../../../apiservice/ApiServices"
 
 export default function Replies(){
-    const reply=[
-        {
-            enqNo : 'E2568',
-            taskId : 't647',
-            type : 'Function Test',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
-        {
-            enqNo : 'E9876',
-            taskId : 't367',
-            type : 'Function failure',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
-        {
-            enqNo : 'E6587',
-            taskId : 't7456',
-            type : 'Changes(effect)',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
-        {
-            enqNo : 'E9675',
-            taskId : 't775',
-            type : 'Controls',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
-        {
-            enqNo : 'E2568',
-            taskId : 't647',
-            type : 'Function Test',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
-        {
-            enqNo : 'E2568',
-            taskId : 't647',
-            type : 'Function Test',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
-        {
-            enqNo : 'E7575',
-            taskId : 't0966',
-            type : 'Function Test',
-            description :'The function were tested successfully by you.You can further pass your project to beta-testing team .'
-        },
+    const [reply,setReply]=useState([{}])
+    const navigate = useNavigate()
 
-    ]
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+            let data = {
+                empId : sessionStorage.getItem("empId")
+            }
+            // console.log(data)
+            ApiServices.getenquiry(data).then(
+                x=>{
+                    console.log(x)
+                    setReply(x.data.data)
+                }
+            )
+        }
+    )
     return(
         <>
             <div className="container my-5 py-5">
+                <div className="row my-3 text-center">
+                    <h1>View Enquiry</h1>
+                </div>
                 <div className="row">
                     <div className="col">
                         <Link to='/user/enquiry'><button className="btn btn-warning">
@@ -63,13 +43,17 @@ export default function Replies(){
                         <div className="col-12 mt-4" key={index}>
                         <div className="card">
                             <div className="card-header">
-                                <h5>Enquiry No : {element.enqNo}</h5>
+                                <h5>Enquiry No : {element?._id}</h5>
                                 {/* <h5>Task Id : {element.taskId}</h5> */}
                                 {/* <h3>Type : {element.type}</h3> */}
                             </div>
                             <div className="card-body">
                                 <p>
-                                    {element.description}
+                                    <h5>Subject : {element?.subject}</h5>
+                                    <hr/>
+                                    <h5>{element?.description}</h5>
+                                    <hr/>
+                                    <h5>{element?.reply}</h5>
                                 </p>
                             </div>
                         </div>

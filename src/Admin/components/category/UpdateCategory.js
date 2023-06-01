@@ -14,9 +14,14 @@ export default function UpdateCategory(){
 
     const param = useParams()
     const _id =param._id
+    
+
 
     useEffect(
         ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
             let data={
                 _id : _id
             }

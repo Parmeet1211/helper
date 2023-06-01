@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ApiServices from "../../../apiservice/ApiServices";
 import { ToastContainer,toast } from "react-toastify";
@@ -11,6 +11,15 @@ export default function Reply(){
     const param = useParams()
     const _id = param._id
     const navigate = useNavigate()
+   
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
 
     const replyEnquiry = (e) =>{
         e.preventDefault()

@@ -194,6 +194,39 @@ class ApiServices {
     return axios.post(BASE_URL+'admin/updateteam',qs.stringify(data),{headers : header1})
 
   }
+  addEnquiry(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/addenquiry',qs.stringify(data),{headers : header1})
+  }
+  addProgress(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/addprogress',qs.stringify(data),{headers : header1})
+  }
+  updateProfile(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/updateprofile',data,{headers : header1})
+  }
+  changePassword(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/changepassword',qs.stringify(data),{headers : header1})
+  }
+  userDashboard(data){
+    const header1 = {
+      Authorization: sessionStorage.getItem("token"),
+    };
+    return axios.post(BASE_URL+'admin/userdashboard',qs.stringify(data),{headers : header1})
+  }
+  addContact(data){
+    return axios.post(BASE_URL+'admin/addcontact',qs.stringify(data),)
+  }
 }
 
 export default new ApiServices();

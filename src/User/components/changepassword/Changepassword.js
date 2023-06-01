@@ -1,18 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import ApiServices from "../../../apiservice/ApiServices";
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+import { useNavigate } from "react-router-dom";
 
 export default  function Changepassword(){ 
     const [oldpassword , setOldpassword] = useState("")
     const [newpassword , setNewpassword] = useState("")
     const [confirmpassword , setConfirmpassword] = useState("")
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
+
+    const changePassword = (e) =>{
+        e.preventDefault()
+        let data={
+            userId : sessionStorage.getItem("_id"),
+            oldpassword : oldpassword,
+            newpassword : newpassword,
+            confirmpassword : confirmpassword
+        }
+        // console.log(data)
+        ApiServices.changePassword(data).then(
+            x=>{
+                // console.log(x)
+                if(x.data.success){
+                    toast.success(x.data.msg)
+                }
+                else{
+                    toast.error(x.data.msg)
+                }
+            }
+        )
+    }
 
     return(
         <>
             <div className="container mt-5 pt-5">
+            <div className="row my-3 text-center">
+                    <h1>Change Password</h1>
+            </div>
             <div className="row my-5 py-5">
                     <div className="col">
                         <div className="card">
-                            <form className="m-3">
+                            <form className="m-3" onSubmit={changePassword}>
                                 <div className="row">
                                     <div className="form-group col-md-12">
                                         <label htmlFor="inputEmail4">Old Password</label>
@@ -49,6 +87,7 @@ export default  function Changepassword(){
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     )
 } 

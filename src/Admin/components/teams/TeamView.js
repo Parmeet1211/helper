@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import ApiServices from "../../../apiservice/ApiServices"
 export default function TeamView(){
     const [team,setTeam] = useState([{}])
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
     useEffect(
         ()=>{
             ApiServices.getteams({}).then(
@@ -11,7 +20,7 @@ export default function TeamView(){
                     setTeam(x.data.data)
                 }
             )
-        },[1]
+        },[3]
     )
     return(
         <>

@@ -20,6 +20,15 @@ export default function UpdateProject(){
     const param = useParams()
     const _id =param._id
     const nav = useNavigate()
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
 
 
     useEffect(

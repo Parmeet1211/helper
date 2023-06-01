@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 export default function UserHeader(){
+    const navigate = useNavigate()
+    const logout = (e) =>{
+        sessionStorage.removeItem("token")
+        navigate('/')
+    }
     return(
         <>
             {/* <!-- ======= Header ======= --> */}
@@ -16,7 +21,7 @@ export default function UserHeader(){
                     <li className="px-3"><Link className="nav-link scrollto" to='/user/employeetask'>Tasks</Link></li>
                     <li className="px-3"><Link className="nav-link scrollto" to='/user/reportuser'>Report</Link></li>
                     <li className="px-3"><Link to='profile' className="nav-link scrollto" >Profile</Link></li>
-                    <li><Link className="getstarted scrollto" to='/'>Sign Out</Link></li>
+                    <li><button className="getstarted scrollto btn-outline-secondary btn" onClick={logout}>Sign Out</button></li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"></i>
                 </nav>

@@ -15,6 +15,15 @@ export default function UpdateTeam() {
     const navigate = useNavigate()
     const param = useParams()
     const _id = param._id
+   
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
 
     useEffect(
         ()=>{
@@ -44,7 +53,7 @@ export default function UpdateTeam() {
         // console.log(data)
         ApiServices.updateTeams(data).then(
             x=>{
-                // console.log(x)
+                console.log(x)
                 if(x.data.success){
                     toast.success(x.data.msg)
                     setTimeout(() => {

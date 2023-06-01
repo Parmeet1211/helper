@@ -18,11 +18,15 @@ export default function UpdateEmployee(){
     const _id = param._id
 
     const navigate = useNavigate()
+    
 
     
 
     useEffect(
-        ()=>{
+        ()=>{ 
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
             let data={
                 _id : _id
             }

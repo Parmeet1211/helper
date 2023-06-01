@@ -17,6 +17,15 @@ export default function AddProject(){
     const [lastDate,setLastDate]=useState("")
     const [category,setCategory]=useState([{}])
     const [employee,setEmployee]=useState([{}])
+    
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
     useEffect(
         ()=>{
             ApiServices.getCategory().then(

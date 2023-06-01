@@ -16,6 +16,14 @@ export default function Team() {
 
     useEffect(
         ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
+
+    useEffect(
+        ()=>{
             ApiServices.getEmployee({}).then(
                 x=>{
                     // console.log(x)

@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import ApiServices from '../../../apiservice/ApiServices'
 import axios from 'axios'
 export default function ViewCategory(){
     const [categoryName,setCategoryName] = useState("")
     const [category,setCategory] = useState([{}])
+    const navigate = useNavigate()
+
+   
     
     useEffect(
         ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
             let catdata = {
              category_name : categoryName
             }

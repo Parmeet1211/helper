@@ -1,10 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import ApiServices from "../../../apiservice/ApiServices";
+import { useNavigate } from "react-router-dom";
 
 
 export default function AddCategory(){
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
     const [categoryName,setCategoryName]=useState("")
     const [description,setDescription]=useState("")
 

@@ -21,7 +21,15 @@ export default function AddTask(){
     const [isComplete,setIsComplete]=useState(false)
 
     const navigate = useNavigate()
+    
 
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
 
 
     useEffect(

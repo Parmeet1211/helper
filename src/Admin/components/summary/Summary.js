@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Basic from "./Basic"
 import Progress from "./Progress"
 import Status from "./Status"
@@ -20,6 +20,17 @@ export default function Summary(){
     const [maintenance , setMaintenance] = useState()
     const [completedTasks,setCompletedTasks] = useState()
     const [pendingTasks,setPendingTasks] = useState()
+
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
+
     useEffect(
         ()=>{
             let data = {}
@@ -45,6 +56,9 @@ export default function Summary(){
     return(
         <>
             <div className="container my-5 p-5">
+                <div className="row my-3 text-center">
+                    <h1>Dashboard</h1>
+                </div>
                 <div className='row'>
                     <Status workload={designer} team="Designer"/>
                     <Status workload={developer} team="Developer"/>

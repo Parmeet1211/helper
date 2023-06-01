@@ -5,6 +5,7 @@ import { ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
 export default function UpdateTask(){
+    
     const [empName , setEmpName] = useState([{}])
     const [category ,setCategory] = useState([{}])
     const [project, setProject] = useState([{}])
@@ -21,6 +22,15 @@ export default function UpdateTask(){
     const [isComplete,setIsComplete]=useState(false)
 
     const navigate = useNavigate()
+    
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
 
 
     const param = useParams()

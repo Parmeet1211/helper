@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import ApiServices from '../../../apiservice/ApiServices'
 export default function ProjectView(){
     const[projects,setProjects]=useState([{}])
@@ -11,6 +11,15 @@ export default function ProjectView(){
 
         }
     }
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
     useEffect(
         ()=>{
             ApiServices.getProject({status : true}).then(

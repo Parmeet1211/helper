@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import ApiServices from '../../../apiservice/ApiServices';
 export default function TaskView(){
     const [task , setTask] = useState([{}])
+    const navigate = useNavigate()
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
     useEffect(
         ()=>{
             let data={}
@@ -50,7 +59,7 @@ export default function TaskView(){
                             <td>progress</td>
                             {/* <td>View</td> */}
                             <td>Update</td>
-                            <td>Delete</td>
+                            {/* <td>Delete</td> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +74,7 @@ export default function TaskView(){
                                 <td>{element?.priority == 1 ? 'High': element?.priority == 2 ? 'Medium' : 'Low'}</td>
                                 <td>{element?.progress}</td>
                                 <td><Link to={'/admin/updatetask/'+`${element._id}`}><button className='btn btn-success'>Update</button></Link></td>
-                                <td><Link><button className='btn btn-danger'>Delete</button></Link></td>
+                                {/* <td><Link><button className='btn btn-danger'>Delete</button></Link></td> */}
                             </tr>
                         ))}
                     </tbody>

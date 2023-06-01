@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ApiServices from "../../../apiservice/ApiServices";
 
 export default function Board(){
     const [doing,setDoing] = useState([{}])
     const [todo,setTodo] = useState([{}])
     const [done,setDone] = useState([{}])
+    const navigate = useNavigate()
+
     useEffect(
         ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
             ApiServices.getnewtasks({}).then(
                 (x) => {
                 // console.log(x)
@@ -33,10 +38,14 @@ export default function Board(){
     return(
         <>
             <div className='container my-5 py-5'>
+                <div className="row my-3 text-center">
+                    <h1>Kanban Board</h1>
+                </div>
                 <div className="row my-5">
                     <div className="col-md-4">
                         <div className="card  mb-3" style={{backgroundColor:'rgba(159,190,255)'}} >
                             <div className="card-header h1">To Do</div>
+                            <div className="card-body h5">Progress = 0%</div>
                         </div>
                         <div className="row">
                             {todo.map((element,index)=>(
@@ -63,6 +72,7 @@ export default function Board(){
                     <div className="col-md-4">
                         <div className="card mb-3 " style={{backgroundColor : 'rgba(159,190,255)'}} >
                                 <div className="card-header h1">Doing</div>
+                                <div className="card-body h5">Progress = 1% to 99%</div>
                         </div>
                         <div className="row">
                         {doing.map((element,index)=>(
@@ -89,7 +99,7 @@ export default function Board(){
                     <div className="col-md-4">
                         <div className="card  mb-3 " style={{backgroundColor:'rgba(159,190,255)'}}>
                             <div className="card-header h1">Done</div>
-                            
+                            <div className="card-body h5">Progress = 100%</div>
                         </div>
                         <div className="row">
                         {done?.map((element,index)=>(

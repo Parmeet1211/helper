@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
@@ -14,6 +14,16 @@ export default function AddEmployee() {
   const [address, setAddress] = useState("");
   const [image, setImage] = useState();
   const navigate = useNavigate()
+
+  
+
+    useEffect(
+        ()=>{
+            if(sessionStorage.getItem("token") == null){
+                navigate('/')
+            }
+        },[1]
+    )
 
   const formHandler = (e) => {
     e.preventDefault();
@@ -59,108 +69,116 @@ export default function AddEmployee() {
         <div className="card text-bg-light my-5 mb-3">
           <div className="card-body">
             <form onSubmit={formHandler}>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Employee Id</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={empid}
-                  onChange={(e) => {
-                    setEmpId(e.target.value);
-                  }}
-                />
+              <div className="row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Employee Id</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={empid}
+                    onChange={(e) => {
+                      setEmpId(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Employee Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={empName}
+                    onChange={(e) => {
+                      setEmpName(e.target.value);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Employee Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={empName}
-                  onChange={(e) => {
-                    setEmpName(e.target.value);
-                  }}
-                />
+              <div className="row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Employee Role</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={empRole}
+                    onChange={(e) => {
+                      setEmpRole(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Employee Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={empEmail}
+                    onChange={(e) => {
+                      setEmpEmail(e.target.value);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Employee Role</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={empRole}
-                  onChange={(e) => {
-                    setEmpRole(e.target.value);
-                  }}
-                />
+              <div className="row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Employee Password</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={empPassword}
+                    onChange={(e) => {
+                      setEmpPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Contact No</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Employee Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={empEmail}
-                  onChange={(e) => {
-                    setEmpEmail(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Employee Password</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={empPassword}
-                  onChange={(e) => {
-                    setEmpPassword(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Contact No</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={phone}
-                  onChange={(e) => {
-                    setPhone(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Address</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  value={address}
-                  onChange={(e) => {
-                    setAddress(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="inputAddress">Image</label>
-                <input
-                  type="file"
-                  className="form-control"
-                  id="inputAddress"
-                  placeholder=""
-                  onChange={(e) => {
-                    setImage(e.target.files[0]);
-                  }}
-                />
+              <div className="row">
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Address</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    value={address}
+                    onChange={(e) => {
+                      setAddress(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label htmlFor="inputAddress">Image</label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder=""
+                    onChange={(e) => {
+                      setImage(e.target.files[0]);
+                    }}
+                  />
+                </div>
               </div>
               <div className="form-group">
                 <div className="form-check">
